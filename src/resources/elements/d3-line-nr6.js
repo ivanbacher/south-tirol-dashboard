@@ -28,7 +28,7 @@ import csv_1995 from '/data/wohnbevolkerung_nach_geschlecht_und_alter/1995.csv!t
 
 @inject(Element)
 
-export class D3LineNr5 {
+export class D3LineNr6 {
 
   constructor(Element) {
     this.element = Element;
@@ -167,97 +167,148 @@ export class D3LineNr5 {
 
       //Group 0
       let g0 = dataSet.data.filter( (current) => { return getGroup(current['Altersklassen']) === 0; } );
-      let g0_total = g0.reduce( (accumulator, current) => {
-        return accumulator + parseInt( current['Insgesamt'].replace('.','') ); //parse int ignores everything after the .
+      let g0_total_M = g0.reduce( (accumulator, current) => {
+        let val = parseInt( current['Männer'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val); //parse int ignores everything after the .
+      }, 0);
+      let g0_total_F = g0.reduce( (accumulator, current) => {
+        let val = parseInt( current['Frauen'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
       }, 0);
 
-      line0.push( { year: new Date(dataSet.year, 0, 1), total: g0_total } );
+      line0.push( { year: new Date(dataSet.year, 0, 1), total_M: g0_total_M, total_F: g0_total_F } );
 
 
       //Group 1
       let g1 = dataSet.data.filter( (current) => { return getGroup(current['Altersklassen']) === 1; } );
-      let g1_total = g1.reduce( (accumulator, current) => {
-        return accumulator + parseInt( current['Insgesamt'].replace('.','') ); //parse int ignores everything after the .
+      let g1_total_M = g1.reduce( (accumulator, current) => {
+        let val = parseInt( current['Männer'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
+      }, 0);
+      let g1_total_F = g1.reduce( (accumulator, current) => {
+        let val = parseInt( current['Frauen'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
       }, 0);
 
-      line1.push( { year: new Date(dataSet.year, 0, 1), total: g1_total } );
+      line1.push( { year: new Date(dataSet.year, 0, 1), total_M: g1_total_M, total_F: g1_total_F } );
 
 
       //Group 2
       let g2 = dataSet.data.filter( (current) => { return getGroup(current['Altersklassen']) === 2; } );
-      let g2_total = g2.reduce( (accumulator, current) => {
-        return accumulator + parseInt( current['Insgesamt'].replace('.','') ); //parse int ignores everything after the .
+      let g2_total_M = g2.reduce( (accumulator, current) => {
+        let val = parseInt( current['Männer'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
+      }, 0);
+      let g2_total_F = g2.reduce( (accumulator, current) => {
+        let val = parseInt( current['Frauen'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
       }, 0);
 
-      line2.push( { year: new Date(dataSet.year, 0, 1), total: g2_total } );
+      line2.push( { year: new Date(dataSet.year, 0, 1), total_M: g2_total_M, total_F: g2_total_F } );
 
 
       //Group 3
       let g3 = dataSet.data.filter( (current) => { return getGroup(current['Altersklassen']) === 3; } );
-      let g3_total = g3.reduce( (accumulator, current) => {
-        return accumulator + parseInt( current['Insgesamt'].replace('.','') ); //parse int ignores everything after the .
+      let g3_total_M = g3.reduce( (accumulator, current) => {
+        let val = parseInt( current['Männer'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
+      }, 0);
+      let g3_total_F = g3.reduce( (accumulator, current) => {
+        let val = parseInt( current['Frauen'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
       }, 0);
 
-      line3.push( { year: new Date(dataSet.year, 0, 1), total: g3_total } );
+      line3.push( { year: new Date(dataSet.year, 0, 1), total_M: g3_total_M, total_F: g3_total_F } );
 
 
       //Group 4
       let g4 = dataSet.data.filter( (current) => { return getGroup(current['Altersklassen']) === 4; } );
-      let g4_total = g4.reduce( (accumulator, current) => {
-        return accumulator + parseInt( current['Insgesamt'].replace('.','') ); //parse int ignores everything after the .
+      let g4_total_M = g4.reduce( (accumulator, current) => {
+        let val = parseInt( current['Männer'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
+      }, 0);
+      let g4_total_F = g4.reduce( (accumulator, current) => {
+        let val = parseInt( current['Frauen'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
       }, 0);
 
-      line4.push( { year: new Date(dataSet.year, 0, 1), total: g4_total } );
+      line4.push( { year: new Date(dataSet.year, 0, 1), total_M: g4_total_M, total_F: g4_total_F } );
+
 
 
       //Group 5
       let g5 = dataSet.data.filter( (current) => { return getGroup(current['Altersklassen']) === 5; } );
-      let g5_total = g5.reduce( (accumulator, current) => {
-        return accumulator + parseInt( current['Insgesamt'].replace('.','') ); //parse int ignores everything after the .
+      let g5_total_M = g5.reduce( (accumulator, current) => {
+        let val = parseInt( current['Männer'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
+      }, 0);
+      let g5_total_F = g5.reduce( (accumulator, current) => {
+        let val = parseInt( current['Frauen'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
       }, 0);
 
-      line5.push( { year: new Date(dataSet.year, 0, 1), total: g5_total } );
+      line5.push( { year: new Date(dataSet.year, 0, 1), total_M: g5_total_M, total_F: g5_total_F } );
 
 
       //Group 6
       let g6 = dataSet.data.filter( (current) => { return getGroup(current['Altersklassen']) === 6; } );
-      let g6_total = g6.reduce( (accumulator, current) => {
-        return accumulator + parseInt( current['Insgesamt'].replace('.','') ); //parse int ignores everything after the .
+      let g6_total_M = g6.reduce( (accumulator, current) => {
+        let val = parseInt( current['Männer'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
+      }, 0);
+      let g6_total_F = g6.reduce( (accumulator, current) => {
+        let val = parseInt( current['Frauen'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
       }, 0);
 
-      line6.push( { year: new Date(dataSet.year, 0, 1), total: g6_total } );
+      line6.push( { year: new Date(dataSet.year, 0, 1), total_M: g6_total_M, total_F: g6_total_F } );
 
 
       //Group 7
       let g7 = dataSet.data.filter( (current) => { return getGroup(current['Altersklassen']) === 7; } );
-      let g7_total = g7.reduce( (accumulator, current) => {
-        return accumulator + parseInt( current['Insgesamt'].replace('.','') ); //parse int ignores everything after the .
+      let g7_total_M = g7.reduce( (accumulator, current) => {
+        let val = parseInt( current['Männer'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
+      }, 0);
+      let g7_total_F = g7.reduce( (accumulator, current) => {
+        let val = parseInt( current['Frauen'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
       }, 0);
 
-      line7.push( { year: new Date(dataSet.year, 0, 1), total: g7_total } );
-
+      line7.push( { year: new Date(dataSet.year, 0, 1), total_M: g7_total_M, total_F: g7_total_F } );
 
       //Group 8
       let g8 = dataSet.data.filter( (current) => { return getGroup(current['Altersklassen']) === 8; } );
-      let g8_total = g8.reduce( (accumulator, current) => {
-        return accumulator + parseInt( current['Insgesamt'].replace('.','') ); //parse int ignores everything after the .
+      let g8_total_M = g8.reduce( (accumulator, current) => {
+        let val = parseInt( current['Männer'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
+      }, 0);
+      let g8_total_F = g8.reduce( (accumulator, current) => {
+        let val = parseInt( current['Frauen'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
       }, 0);
 
-      line8.push( { year: new Date(dataSet.year, 0, 1), total: g8_total } );
+      line8.push( { year: new Date(dataSet.year, 0, 1), total_M: g8_total_M, total_F: g8_total_F } );
     
 
       //Group 9
       let g9 = dataSet.data.filter( (current) => { return getGroup(current['Altersklassen']) === 9; } );
-      let g9_total = g9.reduce( (accumulator, current) => {
-        return accumulator + parseInt( current['Insgesamt'].replace('.','') ); //parse int ignores everything after the .
+      let g9_total_M = g9.reduce( (accumulator, current) => {
+        let val = parseInt( current['Männer'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
+      }, 0);
+      let g9_total_F = g9.reduce( (accumulator, current) => {
+        let val = parseInt( current['Frauen'].replace('.','') );
+        return accumulator + (isNaN(val) === true ? 0 : val);
       }, 0);
 
-      line9.push( { year: new Date(dataSet.year, 0, 1), total: g9_total } );
+      line9.push( { year: new Date(dataSet.year, 0, 1), total_M: g9_total_M, total_F: g9_total_F } );
 
     }
 
+    console.log(lines)
     
-    let container = d3.select('#d3-line-nr5-container');
+    let container = d3.select('#d3-line-nr6-container');
 
     let index = 0;
     for ( let line of lines ) {
@@ -266,7 +317,7 @@ export class D3LineNr5 {
       let svg = col.append('svg');
       
       col.append('p')
-        .attr('class', 'text-center')  
+        .attr('class', 'text-center')
         .text( getGroupName(index) );
     
       let width = parseInt( svg.style('width') );
@@ -282,11 +333,13 @@ export class D3LineNr5 {
       let y = d3.scaleLinear().range([newHeight, 0]);
 
       let yMin = Math.min(
-        d3.min( line, (d) =>  { return d.total; })
+        d3.min( line, (d) =>  { return d.total_M; }),
+        d3.min( line, (d) =>  { return d.total_F; })
       );
 
       let yMax = Math.max(
-        d3.max( line, (d) =>  { return d.total; })
+        d3.max( line, (d) =>  { return d.total_M; }),
+        d3.max( line, (d) =>  { return d.total_F; })
       );
 
       // Scale the range of the data
@@ -294,9 +347,12 @@ export class D3LineNr5 {
       y.domain([ yMin, yMax ]);
 
       // define the line
-      let valueline = d3.line()
+      let valueline1 = d3.line()
         .x(function(d) { return x(d.year); })
-        .y(function(d) { return y(d.total); });
+        .y(function(d) { return y(d.total_M); });
+      let valueline2 = d3.line()
+        .x(function(d) { return x(d.year); })
+        .y(function(d) { return y(d.total_F); });
 
       let viewport = svg.append('g')
         .attr( 'transform', `translate(${paddingL},${paddingT})` );
@@ -306,7 +362,14 @@ export class D3LineNr5 {
         .attr('class', 'line')
         .attr('fill', 'none')
         .attr('stroke', 'blue')
-        .attr('d', valueline);
+        .attr('d', valueline1);
+      
+      viewport.append('path')
+        .data([line])
+        .attr('class', 'line')
+        .attr('fill', 'none')
+        .attr('stroke', 'red')
+        .attr('d', valueline2);
 
       // Create the X Axis
       let xAxis = d3.axisBottom()
@@ -322,7 +385,6 @@ export class D3LineNr5 {
 
       index++;
     }
-
   }
 }
 
