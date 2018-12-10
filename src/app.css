@@ -1,0 +1,29 @@
+#d3-map-container svg {
+    display: block;
+    height: 500px;
+    width: 100%;
+}
+
+#d3-line-one-container svg {
+    display: block;
+    height: 300px;
+    width: 100%;
+}
+
+#d3-line-two-container svg {
+    display: block;
+    height: 300px;
+    width: 100%;
+}
+
+#d3-line-nr3-container svg {
+    display: block;
+    height: 300px;
+    width: 100%;
+}
+
+#d3-line-nr4-container svg {
+    display: block;
+    height: 300px;
+    width: 100%;
+}
