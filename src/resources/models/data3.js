@@ -52,7 +52,7 @@ let dataSets = [
 
 function getGroup( altersKlasse ) {
   let klasse = parseInt( altersKlasse );
-  console.log(klasse)
+
   if (klasse <= 10) {
     return 0;
   }
