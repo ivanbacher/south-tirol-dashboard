@@ -18,18 +18,13 @@ export class D3Map {
   }
 
   attached() {
-    console.log('d3-map attached');
-    console.log(this.element);
-
 
     let svg = d3.select('svg');
-    
+
     //let width = +svg.attr('width');
     //let height = +svg.attr('height');
     let width = parseInt( svg.style('width') );
     let height = parseInt( svg.style('height') );
-
-    console.log('width:', width, 'height: ', height);
 
     let g = svg.append('g');
 
