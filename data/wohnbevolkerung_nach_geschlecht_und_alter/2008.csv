@@ -93,7 +93,6 @@
 001 Aldein,95,,-,2,2
 001 Aldein,96,,-,1,1
 001 Aldein,101,,-,1,1
-001 Aldein,Insgesamt,,827,839,1.666
 002 Andrian,0,,6,6,12
 002 Andrian,1,,3,7,10
 002 Andrian,2,,8,4,12
@@ -190,7 +189,6 @@
 002 Andrian,96,,-,1,1
 002 Andrian,97,,-,1,1
 002 Andrian,101,,-,1,1
-002 Andrian,Insgesamt,,508,495,1.003
 003 Altrei,0,,1,3,4
 003 Altrei,1,,6,4,10
 003 Altrei,2,,2,-,2
@@ -283,7 +281,6 @@
 003 Altrei,94,,-,1,1
 003 Altrei,95,,1,-,1
 003 Altrei,97,,-,1,1
-003 Altrei,Insgesamt,,203,188,391
 004 Eppan a.d. Weinstr.,0,,82,94,176
 004 Eppan a.d. Weinstr.,1,,70,66,136
 004 Eppan a.d. Weinstr.,2,,104,77,181
@@ -385,7 +382,6 @@
 004 Eppan a.d. Weinstr.,98,,-,2,2
 004 Eppan a.d. Weinstr.,99,,3,3,6
 004 Eppan a.d. Weinstr.,100,,-,1,1
-004 Eppan a.d. Weinstr.,Insgesamt,,6.823,6.987,13.810
 005 Hafling,0,,5,6,11
 005 Hafling,1,,2,2,4
 005 Hafling,2,,5,5,10
@@ -478,7 +474,6 @@
 005 Hafling,89,,-,1,1
 005 Hafling,91,,-,1,1
 005 Hafling,92,,-,1,1
-005 Hafling,Insgesamt,,360,365,725
 006 Abtei,0,,24,18,42
 006 Abtei,1,,28,23,51
 006 Abtei,2,,29,22,51
@@ -576,7 +571,6 @@
 006 Abtei,95,,1,-,1
 006 Abtei,96,,-,2,2
 006 Abtei,98,,1,-,1
-006 Abtei,Insgesamt,,1.607,1.697,3.304
 007 Barbian,0,,12,4,16
 007 Barbian,1,,9,11,20
 007 Barbian,2,,5,2,7
@@ -670,7 +664,6 @@
 007 Barbian,90,,1,-,1
 007 Barbian,92,,-,1,1
 007 Barbian,97,,1,-,1
-007 Barbian,Insgesamt,,808,744,1.552
 008 Bozen,0,,499,477,976
 008 Bozen,1,,541,463,1.004
 008 Bozen,2,,466,484,950
@@ -776,7 +769,6 @@
 008 Bozen,102,,-,2,2
 008 Bozen,103,,-,1,1
 008 Bozen,107,,-,1,1
-008 Bozen,Insgesamt,,48.713,53.217,101.930
 009 Prags,0,,4,5,9
 009 Prags,1,,3,6,9
 009 Prags,2,,4,3,7
@@ -868,7 +860,6 @@
 009 Prags,88,,1,-,1
 009 Prags,89,,-,2,2
 009 Prags,93,,-,1,1
-009 Prags,Insgesamt,,336,330,666
 010 Brenner,0,,9,14,23
 010 Brenner,1,,10,11,21
 010 Brenner,2,,6,15,21
@@ -963,7 +954,6 @@
 010 Brenner,93,,-,1,1
 010 Brenner,94,,1,1,2
 010 Brenner,97,,1,-,1
-010 Brenner,Insgesamt,,1.088,1.014,2.102
 011 Brixen,0,,105,101,206
 011 Brixen,1,,121,100,221
 011 Brixen,2,,117,101,218
@@ -1066,7 +1056,6 @@
 011 Brixen,99,,1,2,3
 011 Brixen,100,,-,2,2
 011 Brixen,101,,-,2,2
-011 Brixen,Insgesamt,,9.796,10.448,20.244
 012 Branzoll,0,,14,15,29
 012 Branzoll,1,,13,20,33
 012 Branzoll,2,,13,9,22
@@ -1161,7 +1150,6 @@
 012 Branzoll,94,,-,2,2
 012 Branzoll,96,,-,2,2
 012 Branzoll,97,,1,-,1
-012 Branzoll,Insgesamt,,1.274,1.305,2.579
 013 Bruneck,0,,80,64,144
 013 Bruneck,1,,86,65,151
 013 Bruneck,2,,111,73,184
@@ -1263,7 +1251,6 @@
 013 Bruneck,98,,-,1,1
 013 Bruneck,99,,-,2,2
 013 Bruneck,100,,-,1,1
-013 Bruneck,Insgesamt,,7.464,7.573,15.037
 014 Kuens,0,,2,3,5
 014 Kuens,1,,1,5,6
 014 Kuens,2,,2,1,3
@@ -1349,7 +1336,6 @@
 014 Kuens,92,,-,1,1
 014 Kuens,93,,1,-,1
 014 Kuens,96,,1,-,1
-014 Kuens,Insgesamt,,185,195,380
 015 Kaltern a.d. Weinstr.,0,,39,38,77
 015 Kaltern a.d. Weinstr.,1,,48,47,95
 015 Kaltern a.d. Weinstr.,2,,46,40,86
@@ -1448,7 +1434,6 @@
 015 Kaltern a.d. Weinstr.,95,,2,4,6
 015 Kaltern a.d. Weinstr.,96,,-,7,7
 015 Kaltern a.d. Weinstr.,97,,1,2,3
-015 Kaltern a.d. Weinstr.,Insgesamt,,3.612,3.905,7.517
 016 Freienfeld,0,,12,13,25
 016 Freienfeld,1,,24,13,37
 016 Freienfeld,2,,15,15,30
@@ -1546,7 +1531,6 @@
 016 Freienfeld,95,,-,1,1
 016 Freienfeld,97,,-,1,1
 016 Freienfeld,98,,1,-,1
-016 Freienfeld,Insgesamt,,1.376,1.270,2.646
 017 Sand in Taufers,0,,31,35,66
 017 Sand in Taufers,1,,52,40,92
 017 Sand in Taufers,2,,35,23,58
@@ -1646,7 +1630,6 @@
 017 Sand in Taufers,96,,-,1,1
 017 Sand in Taufers,97,,-,2,2
 017 Sand in Taufers,99,,1,1,2
-017 Sand in Taufers,Insgesamt,,2.583,2.575,5.158
 018 Kastelbell-Tschars,0,,12,6,18
 018 Kastelbell-Tschars,1,,12,8,20
 018 Kastelbell-Tschars,2,,15,8,23
@@ -1744,7 +1727,6 @@
 018 Kastelbell-Tschars,97,,-,1,1
 018 Kastelbell-Tschars,98,,-,1,1
 018 Kastelbell-Tschars,99,,1,-,1
-018 Kastelbell-Tschars,Insgesamt,,1.199,1.167,2.366
 019 Kastelruth,0,,53,35,88
 019 Kastelruth,1,,43,39,82
 019 Kastelruth,2,,47,37,84
@@ -1845,7 +1827,6 @@
 019 Kastelruth,97,,-,1,1
 019 Kastelruth,100,,1,-,1
 019 Kastelruth,103,,-,1,1
-019 Kastelruth,Insgesamt,,3.227,3.184,6.411
 020 Tscherms,0,,4,14,18
 020 Tscherms,1,,6,9,15
 020 Tscherms,2,,8,9,17
@@ -1943,7 +1924,6 @@
 020 Tscherms,94,,-,1,1
 020 Tscherms,96,,1,-,1
 020 Tscherms,98,,-,1,1
-020 Tscherms,Insgesamt,,680,716,1.396
 021 Kiens,0,,17,7,24
 021 Kiens,1,,13,11,24
 021 Kiens,2,,12,11,23
@@ -2040,7 +2020,6 @@
 021 Kiens,94,,1,1,2
 021 Kiens,95,,1,2,3
 021 Kiens,96,,-,2,2
-021 Kiens,Insgesamt,,1.349,1.317,2.666
 022 Klausen,0,,29,24,53
 022 Klausen,1,,33,28,61
 022 Klausen,2,,41,40,81
@@ -2139,7 +2118,6 @@
 022 Klausen,97,,1,-,1
 022 Klausen,98,,-,1,1
 022 Klausen,99,,-,1,1
-022 Klausen,Insgesamt,,2.555,2.527,5.082
 023 Karneid,0,,30,15,45
 023 Karneid,1,,23,20,43
 023 Karneid,2,,20,13,33
@@ -2236,7 +2214,6 @@
 023 Karneid,95,,-,1,1
 023 Karneid,96,,-,3,3
 023 Karneid,98,,1,-,1
-023 Karneid,Insgesamt,,1.693,1.604,3.297
 024 Kurtatsch a.d.Weinstr.,0,,17,7,24
 024 Kurtatsch a.d.Weinstr.,1,,7,6,13
 024 Kurtatsch a.d.Weinstr.,2,,7,16,23
@@ -2331,7 +2308,6 @@
 024 Kurtatsch a.d.Weinstr.,93,,1,-,1
 024 Kurtatsch a.d.Weinstr.,96,,2,-,2
 024 Kurtatsch a.d.Weinstr.,97,,-,2,2
-024 Kurtatsch a.d.Weinstr.,Insgesamt,,1.106,1.114,2.220
 025 Kurtinig a.d. Weinstr.,0,,5,-,5
 025 Kurtinig a.d. Weinstr.,1,,5,3,8
 025 Kurtinig a.d. Weinstr.,2,,3,1,4
@@ -2425,7 +2401,6 @@
 025 Kurtinig a.d. Weinstr.,93,,-,1,1
 025 Kurtinig a.d. Weinstr.,94,,-,2,2
 025 Kurtinig a.d. Weinstr.,96,,-,1,1
-025 Kurtinig a.d. Weinstr.,Insgesamt,,312,319,631
 026 Corvara,0,,6,8,14
 026 Corvara,1,,5,9,14
 026 Corvara,2,,10,4,14
@@ -2520,7 +2495,6 @@
 026 Corvara,91,,1,1,2
 026 Corvara,94,,-,2,2
 026 Corvara,96,,-,1,1
-026 Corvara,Insgesamt,,661,648,1.309
 027 Graun im Vinschgau,0,,13,7,20
 027 Graun im Vinschgau,1,,21,14,35
 027 Graun im Vinschgau,2,,13,21,34
@@ -2616,7 +2590,6 @@
 027 Graun im Vinschgau,94,,-,1,1
 027 Graun im Vinschgau,97,,-,1,1
 027 Graun im Vinschgau,100,,-,1,1
-027 Graun im Vinschgau,Insgesamt,,1.240,1.173,2.413
 028 Toblach,0,,24,19,43
 028 Toblach,1,,24,13,37
 028 Toblach,2,,19,10,29
@@ -2713,7 +2686,6 @@
 028 Toblach,95,,-,2,2
 028 Toblach,96,,-,1,1
 028 Toblach,101,,1,-,1
-028 Toblach,Insgesamt,,1.637,1.611,3.248
 029 Neumarkt,0,,21,23,44
 029 Neumarkt,1,,32,18,50
 029 Neumarkt,2,,22,33,55
@@ -2812,7 +2784,6 @@
 029 Neumarkt,96,,-,3,3
 029 Neumarkt,97,,-,1,1
 029 Neumarkt,98,,-,1,1
-029 Neumarkt,Insgesamt,,2.321,2.471,4.792
 030 Pfalzen,0,,14,20,34
 030 Pfalzen,1,,13,10,23
 030 Pfalzen,2,,18,16,34
@@ -2908,7 +2879,6 @@
 030 Pfalzen,92,,-,2,2
 030 Pfalzen,94,,-,2,2
 030 Pfalzen,95,,1,1,2
-030 Pfalzen,Insgesamt,,1.261,1.255,2.516
 031 Völs am Schlern,0,,18,38,56
 031 Völs am Schlern,1,,19,21,40
 031 Völs am Schlern,2,,24,25,49
@@ -3005,7 +2975,6 @@
 031 Völs am Schlern,94,,2,2,4
 031 Völs am Schlern,98,,1,-,1
 031 Völs am Schlern,99,,1,-,1
-031 Völs am Schlern,Insgesamt,,1.655,1.687,3.342
 032 Franzensfeste,0,,5,7,12
 032 Franzensfeste,1,,8,5,13
 032 Franzensfeste,2,,4,6,10
@@ -3098,7 +3067,6 @@
 032 Franzensfeste,90,,-,2,2
 032 Franzensfeste,93,,1,-,1
 032 Franzensfeste,96,,-,1,1
-032 Franzensfeste,Insgesamt,,490,464,954
 033 Villnöss,0,,18,9,27
 033 Villnöss,1,,15,15,30
 033 Villnöss,2,,12,22,34
@@ -3193,7 +3161,6 @@
 033 Villnöss,91,,-,2,2
 033 Villnöss,93,,-,1,1
 033 Villnöss,95,,-,1,1
-033 Villnöss,Insgesamt,,1.240,1.259,2.499
 034 Gais,0,,13,17,30
 034 Gais,1,,15,19,34
 034 Gais,2,,24,14,38
@@ -3290,7 +3257,6 @@
 034 Gais,93,,-,1,1
 034 Gais,95,,2,-,2
 034 Gais,97,,-,1,1
-034 Gais,Insgesamt,,1.595,1.523,3.118
 035 Gargazon,0,,12,6,18
 035 Gargazon,1,,8,5,13
 035 Gargazon,2,,10,14,24
@@ -3385,7 +3351,6 @@
 035 Gargazon,94,,1,-,1
 035 Gargazon,95,,1,3,4
 035 Gargazon,96,,1,-,1
-035 Gargazon,Insgesamt,,770,780,1.550
 036 Glurns,0,,9,3,12
 036 Glurns,1,,6,2,8
 036 Glurns,2,,4,7,11
@@ -3476,7 +3441,6 @@
 036 Glurns,89,,1,1,2
 036 Glurns,91,,-,1,1
 036 Glurns,93,,-,1,1
-036 Glurns,Insgesamt,,455,427,882
 037 Latsch,0,,26,22,48
 037 Latsch,1,,26,32,58
 037 Latsch,2,,29,27,56
@@ -3575,7 +3539,6 @@
 037 Latsch,95,,1,1,2
 037 Latsch,96,,1,1,2
 037 Latsch,99,,-,1,1
-037 Latsch,Insgesamt,,2.556,2.553,5.109
 038 Algund,0,,15,22,37
 038 Algund,1,,22,26,48
 038 Algund,2,,24,18,42
@@ -3676,7 +3639,6 @@
 038 Algund,97,,-,4,4
 038 Algund,98,,-,1,1
 038 Algund,100,,-,2,2
-038 Algund,Insgesamt,,2.227,2.380,4.607
 039 Lajen,0,,19,18,37
 039 Lajen,1,,19,15,34
 039 Lajen,2,,15,19,34
@@ -3771,7 +3733,6 @@
 039 Lajen,93,,1,-,1
 039 Lajen,95,,1,1,2
 039 Lajen,96,,-,1,1
-039 Lajen,Insgesamt,,1.279,1.247,2.526
 040 Leifers,0,,104,86,190
 040 Leifers,1,,91,87,178
 040 Leifers,2,,80,88,168
@@ -3872,7 +3833,6 @@
 040 Leifers,97,,1,2,3
 040 Leifers,98,,-,4,4
 040 Leifers,99,,-,1,1
-040 Leifers,Insgesamt,,8.248,8.348,16.596
 041 Lana,0,,67,66,133
 041 Lana,1,,71,58,129
 041 Lana,2,,66,56,122
@@ -3975,7 +3935,6 @@
 041 Lana,99,,-,1,1
 041 Lana,100,,-,1,1
 041 Lana,104,,-,1,1
-041 Lana,Insgesamt,,5.331,5.617,10.948
 042 Laas,0,,23,24,47
 042 Laas,1,,31,10,41
 042 Laas,2,,19,31,50
@@ -4075,7 +4034,6 @@
 042 Laas,96,,-,3,3
 042 Laas,97,,-,1,1
 042 Laas,98,,1,1,2
-042 Laas,Insgesamt,,1.956,1.895,3.851
 043 Laurein,0,,2,2,4
 043 Laurein,1,,1,-,1
 043 Laurein,2,,9,-,9
@@ -4161,7 +4119,6 @@
 043 Laurein,88,,1,1,2
 043 Laurein,92,,1,-,1
 043 Laurein,95,,-,1,1
-043 Laurein,Insgesamt,,194,171,365
 044 Lüsen,0,,7,9,16
 044 Lüsen,1,,12,11,23
 044 Lüsen,2,,9,14,23
@@ -4255,7 +4212,6 @@
 044 Lüsen,91,,-,1,1
 044 Lüsen,92,,-,1,1
 044 Lüsen,95,,-,1,1
-044 Lüsen,Insgesamt,,749,766,1.515
 045 Margreid a.d. Weinstr.,0,,7,10,17
 045 Margreid a.d. Weinstr.,1,,6,2,8
 045 Margreid a.d. Weinstr.,2,,8,5,13
@@ -4348,7 +4304,6 @@
 045 Margreid a.d. Weinstr.,89,,1,4,5
 045 Margreid a.d. Weinstr.,90,,1,-,1
 045 Margreid a.d. Weinstr.,92,,1,2,3
-045 Margreid a.d. Weinstr.,Insgesamt,,627,642,1.269
 046 Mals,0,,25,20,45
 046 Mals,1,,23,29,52
 046 Mals,2,,33,37,70
@@ -4447,7 +4402,6 @@
 046 Mals,95,,1,4,5
 046 Mals,98,,-,1,1
 046 Mals,99,,-,1,1
-046 Mals,Insgesamt,,2.568,2.469,5.037
 047 Enneberg,0,,16,17,33
 047 Enneberg,1,,16,16,32
 047 Enneberg,2,,25,19,44
@@ -4545,7 +4499,6 @@
 047 Enneberg,94,,1,3,4
 047 Enneberg,96,,-,1,1
 047 Enneberg,103,,-,1,1
-047 Enneberg,Insgesamt,,1.464,1.398,2.862
 048 Marling,0,,8,10,18
 048 Marling,1,,16,11,27
 048 Marling,2,,12,17,29
@@ -4643,7 +4596,6 @@
 048 Marling,95,,-,2,2
 048 Marling,96,,1,-,1
 048 Marling,99,,1,-,1
-048 Marling,Insgesamt,,1.214,1.213,2.427
 049 Martell,0,,6,1,7
 049 Martell,1,,7,-,7
 049 Martell,2,,5,5,10
@@ -4736,7 +4688,6 @@
 049 Martell,94,,-,1,1
 049 Martell,95,,1,-,1
 049 Martell,97,,2,-,2
-049 Martell,Insgesamt,,464,405,869
 050 Mölten,0,,8,14,22
 050 Mölten,1,,14,13,27
 050 Mölten,2,,8,8,16
@@ -4831,7 +4782,6 @@
 050 Mölten,92,,-,1,1
 050 Mölten,93,,-,1,1
 050 Mölten,94,,-,1,1
-050 Mölten,Insgesamt,,814,772,1.586
 051 Meran,0,,179,151,330
 051 Meran,1,,218,177,395
 051 Meran,2,,192,198,390
@@ -4935,7 +4885,6 @@
 051 Meran,100,,2,5,7
 051 Meran,101,,-,2,2
 051 Meran,102,,-,2,2
-051 Meran,Insgesamt,,17.700,19.246,36.946
 052 Welsberg-Taisten,0,,20,21,41
 052 Welsberg-Taisten,1,,21,21,42
 052 Welsberg-Taisten,2,,9,28,37
@@ -5036,7 +4985,6 @@
 052 Welsberg-Taisten,98,,-,2,2
 052 Welsberg-Taisten,100,,-,2,2
 052 Welsberg-Taisten,101,,-,1,1
-052 Welsberg-Taisten,Insgesamt,,1.372,1.392,2.764
 053 Montan,0,,10,8,18
 053 Montan,1,,5,5,10
 053 Montan,2,,8,6,14
@@ -5134,7 +5082,6 @@
 053 Montan,95,,-,1,1
 053 Montan,97,,-,1,1
 053 Montan,99,,-,1,1
-053 Montan,Insgesamt,,776,775,1.551
 054 Moos in Passeier,0,,15,11,26
 054 Moos in Passeier,1,,16,7,23
 054 Moos in Passeier,2,,16,8,24
@@ -5230,7 +5177,6 @@
 054 Moos in Passeier,94,,-,1,1
 054 Moos in Passeier,96,,-,1,1
 054 Moos in Passeier,98,,-,1,1
-054 Moos in Passeier,Insgesamt,,1.141,1.028,2.169
 055 Nals,0,,11,6,17
 055 Nals,1,,7,8,15
 055 Nals,2,,11,3,14
@@ -5328,7 +5274,6 @@
 055 Nals,96,,1,-,1
 055 Nals,97,,-,1,1
 055 Nals,98,,-,1,1
-055 Nals,Insgesamt,,841,845,1.686
 056 Naturns,0,,27,22,49
 056 Naturns,1,,31,30,61
 056 Naturns,2,,34,30,64
@@ -5429,7 +5374,6 @@
 056 Naturns,97,,-,1,1
 056 Naturns,98,,1,-,1
 056 Naturns,99,,-,3,3
-056 Naturns,Insgesamt,,2.721,2.669,5.390
 057 Natz-Schabs,0,,19,20,39
 057 Natz-Schabs,1,,15,15,30
 057 Natz-Schabs,2,,13,17,30
@@ -5526,7 +5470,6 @@
 057 Natz-Schabs,96,,-,1,1
 057 Natz-Schabs,99,,1,-,1
 057 Natz-Schabs,100,,-,1,1
-057 Natz-Schabs,Insgesamt,,1.451,1.387,2.838
 058 Welschnofen,0,,10,7,17
 058 Welschnofen,1,,7,8,15
 058 Welschnofen,2,,8,7,15
@@ -5627,7 +5570,6 @@
 058 Welschnofen,97,,1,-,1
 058 Welschnofen,98,,1,1,2
 058 Welschnofen,99,,-,1,1
-058 Welschnofen,Insgesamt,,973,927,1.900
 059 Deutschnofen,0,,18,19,37
 059 Deutschnofen,1,,17,15,32
 059 Deutschnofen,2,,23,25,48
@@ -5727,7 +5669,6 @@
 059 Deutschnofen,96,,-,1,1
 059 Deutschnofen,97,,-,3,3
 059 Deutschnofen,98,,1,-,1
-059 Deutschnofen,Insgesamt,,1.951,1.890,3.841
 060 Auer,0,,14,22,36
 060 Auer,1,,19,15,34
 060 Auer,2,,15,11,26
@@ -5825,7 +5766,6 @@
 060 Auer,94,,-,3,3
 060 Auer,95,,1,4,5
 060 Auer,97,,-,1,1
-060 Auer,Insgesamt,,1.679,1.799,3.478
 061 St.Ulrich,0,,34,21,55
 061 St.Ulrich,1,,28,32,60
 061 St.Ulrich,2,,35,26,61
@@ -5926,7 +5866,6 @@
 061 St.Ulrich,97,,-,1,1
 061 St.Ulrich,98,,-,1,1
 061 St.Ulrich,100,,1,-,1
-061 St.Ulrich,Insgesamt,,2.264,2.318,4.582
 062 Partschins,0,,22,10,32
 062 Partschins,1,,16,16,32
 062 Partschins,2,,17,17,34
@@ -6023,7 +5962,6 @@
 062 Partschins,93,,-,1,1
 062 Partschins,94,,-,2,2
 062 Partschins,95,,-,1,1
-062 Partschins,Insgesamt,,1.682,1.741,3.423
 063 Percha,0,,10,5,15
 063 Percha,1,,10,6,16
 063 Percha,2,,4,3,7
@@ -6114,7 +6052,6 @@
 063 Percha,87,,-,2,2
 063 Percha,88,,-,2,2
 063 Percha,94,,-,1,1
-063 Percha,Insgesamt,,703,687,1.390
 064 Plaus,0,,4,4,8
 064 Plaus,1,,4,4,8
 064 Plaus,2,,4,1,5
@@ -6204,7 +6141,6 @@
 064 Plaus,89,,-,2,2
 064 Plaus,90,,-,1,1
 064 Plaus,93,,-,1,1
-064 Plaus,Insgesamt,,348,312,660
 065 Waidbruck,1,,1,-,1
 065 Waidbruck,2,,2,-,2
 065 Waidbruck,4,,1,-,1
@@ -6279,7 +6215,6 @@
 065 Waidbruck,88,,-,1,1
 065 Waidbruck,89,,-,2,2
 065 Waidbruck,94,,-,1,1
-065 Waidbruck,Insgesamt,,96,85,181
 066 Burgstall,0,,10,14,24
 066 Burgstall,1,,14,5,19
 066 Burgstall,2,,9,12,21
@@ -6373,7 +6308,6 @@
 066 Burgstall,91,,1,-,1
 066 Burgstall,92,,-,2,2
 066 Burgstall,93,,1,1,2
-066 Burgstall,Insgesamt,,826,865,1.691
 067 Prad am Stilfser Joch,0,,14,15,29
 067 Prad am Stilfser Joch,1,,15,13,28
 067 Prad am Stilfser Joch,2,,17,19,36
@@ -6470,7 +6404,6 @@
 067 Prad am Stilfser Joch,93,,1,-,1
 067 Prad am Stilfser Joch,94,,-,1,1
 067 Prad am Stilfser Joch,96,,2,-,2
-067 Prad am Stilfser Joch,Insgesamt,,1.693,1.667,3.360
 068 Prettau,0,,6,3,9
 068 Prettau,1,,6,2,8
 068 Prettau,2,,6,5,11
@@ -6564,7 +6497,6 @@
 068 Prettau,90,,1,1,2
 068 Prettau,92,,-,2,2
 068 Prettau,95,,-,1,1
-068 Prettau,Insgesamt,,312,290,602
 069 Proveis,0,,1,1,2
 069 Proveis,1,,1,1,2
 069 Proveis,2,,1,-,1
@@ -6650,7 +6582,6 @@
 069 Proveis,86,,-,1,1
 069 Proveis,87,,-,1,1
 069 Proveis,88,,-,1,1
-069 Proveis,Insgesamt,,151,119,270
 070 Ratschings,0,,19,20,39
 070 Ratschings,1,,31,23,54
 070 Ratschings,2,,27,26,53
@@ -6745,7 +6676,6 @@
 070 Ratschings,93,,-,1,1
 070 Ratschings,94,,-,1,1
 070 Ratschings,95,,1,-,1
-070 Ratschings,Insgesamt,,2.227,2.060,4.287
 071 Rasen-Antholz,0,,17,7,24
 071 Rasen-Antholz,1,,19,17,36
 071 Rasen-Antholz,2,,15,21,36
@@ -6843,7 +6773,6 @@
 071 Rasen-Antholz,94,,1,-,1
 071 Rasen-Antholz,99,,-,1,1
 071 Rasen-Antholz,103,,-,1,1
-071 Rasen-Antholz,Insgesamt,,1.456,1.379,2.835
 072 Ritten,0,,33,52,85
 072 Ritten,1,,45,53,98
 072 Ritten,2,,53,48,101
@@ -6944,7 +6873,6 @@
 072 Ritten,97,,1,1,2
 072 Ritten,98,,-,1,1
 072 Ritten,99,,1,-,1
-072 Ritten,Insgesamt,,3.696,3.687,7.383
 073 Riffian,0,,11,6,17
 073 Riffian,1,,10,9,19
 073 Riffian,2,,6,7,13
@@ -7037,7 +6965,6 @@
 073 Riffian,91,,-,2,2
 073 Riffian,93,,-,1,1
 073 Riffian,94,,-,1,1
-073 Riffian,Insgesamt,,631,629,1.260
 074 Mühlbach,0,,17,18,35
 074 Mühlbach,1,,20,18,38
 074 Mühlbach,2,,14,8,22
@@ -7133,7 +7060,6 @@
 074 Mühlbach,94,,-,1,1
 074 Mühlbach,95,,1,2,3
 074 Mühlbach,96,,-,1,1
-074 Mühlbach,Insgesamt,,1.426,1.390,2.816
 075 Rodeneck,0,,5,9,14
 075 Rodeneck,1,,7,6,13
 075 Rodeneck,2,,5,3,8
@@ -7225,7 +7151,6 @@
 075 Rodeneck,88,,2,-,2
 075 Rodeneck,89,,2,-,2
 075 Rodeneck,90,,-,2,2
-075 Rodeneck,Insgesamt,,608,565,1.173
 076 Salurn,0,,27,21,48
 076 Salurn,1,,23,27,50
 076 Salurn,2,,25,20,45
@@ -7325,7 +7250,6 @@
 076 Salurn,96,,1,1,2
 076 Salurn,97,,-,2,2
 076 Salurn,99,,-,1,1
-076 Salurn,Insgesamt,,1.707,1.734,3.441
 077 Innichen,0,,22,11,33
 077 Innichen,1,,14,17,31
 077 Innichen,2,,12,15,27
@@ -7424,7 +7348,6 @@
 077 Innichen,95,,-,1,1
 077 Innichen,96,,-,1,1
 077 Innichen,99,,-,1,1
-077 Innichen,Insgesamt,,1.542,1.605,3.147
 079 Jenesien,0,,20,24,44
 079 Jenesien,1,,21,19,40
 079 Jenesien,2,,21,22,43
@@ -7523,7 +7446,6 @@
 079 Jenesien,96,,1,1,2
 079 Jenesien,98,,-,1,1
 079 Jenesien,100,,-,1,1
-079 Jenesien,Insgesamt,,1.458,1.471,2.929
 080 St.Leonhard in Pass.,0,,22,21,43
 080 St.Leonhard in Pass.,1,,21,22,43
 080 St.Leonhard in Pass.,2,,18,23,41
@@ -7621,7 +7543,6 @@
 080 St.Leonhard in Pass.,95,,-,1,1
 080 St.Leonhard in Pass.,96,,-,2,2
 080 St.Leonhard in Pass.,101,,-,1,1
-080 St.Leonhard in Pass.,Insgesamt,,1.796,1.691,3.487
 081 St.Lorenzen,0,,23,15,38
 081 St.Lorenzen,1,,23,20,43
 081 St.Lorenzen,2,,13,18,31
@@ -7716,7 +7637,6 @@
 081 St.Lorenzen,91,,-,1,1
 081 St.Lorenzen,94,,2,1,3
 081 St.Lorenzen,98,,-,1,1
-081 St.Lorenzen,Insgesamt,,1.838,1.794,3.632
 082 St.Martin in Thurn,0,,7,3,10
 082 St.Martin in Thurn,1,,2,11,13
 082 St.Martin in Thurn,2,,9,14,23
@@ -7812,7 +7732,6 @@
 082 St.Martin in Thurn,94,,-,1,1
 082 St.Martin in Thurn,95,,-,1,1
 082 St.Martin in Thurn,96,,1,-,1
-082 St.Martin in Thurn,Insgesamt,,873,849,1.722
 083 St.Martin in Passeier,0,,22,25,47
 083 St.Martin in Passeier,1,,16,23,39
 083 St.Martin in Passeier,2,,24,23,47
@@ -7909,7 +7828,6 @@
 083 St.Martin in Passeier,93,,1,-,1
 083 St.Martin in Passeier,94,,-,2,2
 083 St.Martin in Passeier,97,,1,-,1
-083 St.Martin in Passeier,Insgesamt,,1.553,1.538,3.091
 084 St.Pankraz,0,,7,11,18
 084 St.Pankraz,1,,9,11,20
 084 St.Pankraz,2,,9,14,23
@@ -8006,7 +7924,6 @@
 084 St.Pankraz,94,,-,1,1
 084 St.Pankraz,96,,1,-,1
 084 St.Pankraz,99,,-,1,1
-084 St.Pankraz,Insgesamt,,820,766,1.586
 085 St.Christina in Gröden,0,,11,10,21
 085 St.Christina in Gröden,1,,10,10,20
 085 St.Christina in Gröden,2,,9,9,18
@@ -8101,7 +8018,6 @@
 085 St.Christina in Gröden,93,,2,1,3
 085 St.Christina in Gröden,94,,-,1,1
 085 St.Christina in Gröden,95,,2,-,2
-085 St.Christina in Gröden,Insgesamt,,958,944,1.902
 086 Sarntal,0,,46,54,100
 086 Sarntal,1,,53,39,92
 086 Sarntal,2,,44,50,94
@@ -8199,7 +8115,6 @@
 086 Sarntal,95,,4,3,7
 086 Sarntal,96,,-,1,1
 086 Sarntal,101,,1,1,2
-086 Sarntal,Insgesamt,,3.483,3.350,6.833
 087 Schenna,0,,18,18,36
 087 Schenna,1,,10,12,22
 087 Schenna,2,,23,21,44
@@ -8296,7 +8211,6 @@
 087 Schenna,96,,-,1,1
 087 Schenna,98,,-,1,1
 087 Schenna,102,,1,-,1
-087 Schenna,Insgesamt,,1.416,1.370,2.786
 088 Mühlwald,0,,9,7,16
 088 Mühlwald,1,,10,8,18
 088 Mühlwald,2,,4,12,16
@@ -8391,7 +8305,6 @@
 088 Mühlwald,93,,-,1,1
 088 Mühlwald,95,,-,1,1
 088 Mühlwald,100,,1,-,1
-088 Mühlwald,Insgesamt,,791,686,1.477
 089 Wolkenstein in Gröden,0,,17,10,27
 089 Wolkenstein in Gröden,1,,17,14,31
 089 Wolkenstein in Gröden,2,,11,16,27
@@ -8488,7 +8401,6 @@
 089 Wolkenstein in Gröden,96,,-,1,1
 089 Wolkenstein in Gröden,97,,-,2,2
 089 Wolkenstein in Gröden,99,,-,1,1
-089 Wolkenstein in Gröden,Insgesamt,,1.294,1.323,2.617
 091 Schnals,0,,9,4,13
 091 Schnals,1,,4,6,10
 091 Schnals,2,,3,3,6
@@ -8588,7 +8500,6 @@
 091 Schnals,96,,1,-,1
 091 Schnals,97,,-,1,1
 091 Schnals,99,,-,1,1
-091 Schnals,Insgesamt,,695,658,1.353
 092 Sexten,0,,4,6,10
 092 Sexten,1,,6,17,23
 092 Sexten,2,,7,8,15
@@ -8684,7 +8595,6 @@
 092 Sexten,94,,1,-,1
 092 Sexten,95,,-,1,1
 092 Sexten,96,,-,1,1
-092 Sexten,Insgesamt,,937,984,1.921
 093 Schlanders,0,,28,27,55
 093 Schlanders,1,,28,32,60
 093 Schlanders,2,,28,21,49
@@ -8785,7 +8695,6 @@
 093 Schlanders,97,,-,1,1
 093 Schlanders,98,,-,2,2
 093 Schlanders,99,,-,1,1
-093 Schlanders,Insgesamt,,2.877,3.025,5.902
 094 Schluderns,0,,9,2,11
 094 Schluderns,1,,13,14,27
 094 Schluderns,2,,7,10,17
@@ -8882,7 +8791,6 @@
 094 Schluderns,94,,1,1,2
 094 Schluderns,95,,1,-,1
 094 Schluderns,99,,-,1,1
-094 Schluderns,Insgesamt,,937,913,1.850
 095 Stilfs,0,,6,6,12
 095 Stilfs,1,,2,5,7
 095 Stilfs,2,,7,4,11
@@ -8978,7 +8886,6 @@
 095 Stilfs,92,,-,1,1
 095 Stilfs,94,,1,-,1
 095 Stilfs,96,,-,1,1
-095 Stilfs,Insgesamt,,635,601,1.236
 096 Terenten,0,,9,6,15
 096 Terenten,1,,11,11,22
 096 Terenten,2,,13,9,22
@@ -9073,7 +8980,6 @@
 096 Terenten,91,,1,-,1
 096 Terenten,92,,-,1,1
 096 Terenten,94,,1,-,1
-096 Terenten,Insgesamt,,871,812,1.683
 097 Terlan,0,,26,27,53
 097 Terlan,1,,23,17,40
 097 Terlan,2,,24,30,54
@@ -9173,7 +9079,6 @@
 097 Terlan,97,,-,2,2
 097 Terlan,98,,-,2,2
 097 Terlan,101,,-,1,1
-097 Terlan,Insgesamt,,1.969,2.102,4.071
 098 Tramin a.d. Weinstr.,0,,19,8,27
 098 Tramin a.d. Weinstr.,1,,15,12,27
 098 Tramin a.d. Weinstr.,2,,16,13,29
@@ -9272,7 +9177,6 @@
 098 Tramin a.d. Weinstr.,96,,1,1,2
 098 Tramin a.d. Weinstr.,97,,-,2,2
 098 Tramin a.d. Weinstr.,98,,1,1,2
-098 Tramin a.d. Weinstr.,Insgesamt,,1.597,1.655,3.252
 099 Tisens,0,,12,7,19
 099 Tisens,1,,10,9,19
 099 Tisens,2,,7,7,14
@@ -9368,7 +9272,6 @@
 099 Tisens,94,,1,1,2
 099 Tisens,96,,-,2,2
 099 Tisens,97,,-,2,2
-099 Tisens,Insgesamt,,902,934,1.836
 100 Tiers,0,,9,9,18
 100 Tiers,1,,9,4,13
 100 Tiers,2,,2,11,13
@@ -9464,7 +9367,6 @@
 100 Tiers,93,,1,1,2
 100 Tiers,95,,-,1,1
 100 Tiers,96,,-,2,2
-100 Tiers,Insgesamt,,468,497,965
 101 Tirol,0,,12,11,23
 101 Tirol,1,,15,9,24
 101 Tirol,2,,8,10,18
@@ -9559,7 +9461,6 @@
 101 Tirol,92,,1,1,2
 101 Tirol,94,,-,1,1
 101 Tirol,97,,-,1,1
-101 Tirol,Insgesamt,,1.219,1.179,2.398
 102 Truden im Naturpark,0,,4,7,11
 102 Truden im Naturpark,1,,10,6,16
 102 Truden im Naturpark,2,,4,1,5
@@ -9651,7 +9552,6 @@
 102 Truden im Naturpark,88,,-,2,2
 102 Truden im Naturpark,89,,1,4,5
 102 Truden im Naturpark,90,,-,1,1
-102 Truden im Naturpark,Insgesamt,,475,515,990
 103 Taufers im Münstertal,0,,6,5,11
 103 Taufers im Münstertal,1,,6,8,14
 103 Taufers im Münstertal,2,,4,7,11
@@ -9748,7 +9648,6 @@
 103 Taufers im Münstertal,95,,-,1,1
 103 Taufers im Münstertal,96,,-,2,2
 103 Taufers im Münstertal,99,,-,1,1
-103 Taufers im Münstertal,Insgesamt,,470,488,958
 104 Ulten,0,,18,10,28
 104 Ulten,1,,8,10,18
 104 Ulten,2,,13,10,23
@@ -9847,7 +9746,6 @@
 104 Ulten,97,,-,3,3
 104 Ulten,98,,-,1,1
 104 Ulten,110,,-,1,1
-104 Ulten,Insgesamt,,1.489,1.438,2.927
 105 Pfatten,0,,7,6,13
 105 Pfatten,1,,7,4,11
 105 Pfatten,2,,8,5,13
@@ -9939,7 +9837,6 @@
 105 Pfatten,90,,-,1,1
 105 Pfatten,91,,1,1,2
 105 Pfatten,92,,-,1,1
-105 Pfatten,Insgesamt,,505,500,1.005
 106 Olang,0,,21,18,39
 106 Olang,1,,12,20,32
 106 Olang,2,,6,18,24
@@ -10034,7 +9931,6 @@
 106 Olang,92,,-,1,1
 106 Olang,93,,1,3,4
 106 Olang,94,,-,2,2
-106 Olang,Insgesamt,,1.515,1.503,3.018
 107 Pfitsch,0,,12,22,34
 107 Pfitsch,1,,14,9,23
 107 Pfitsch,2,,22,12,34
@@ -10132,7 +10028,6 @@
 107 Pfitsch,96,,-,1,1
 107 Pfitsch,97,,-,1,1
 107 Pfitsch,98,,-,1,1
-107 Pfitsch,Insgesamt,,1.375,1.354,2.729
 108 Ahrntal,0,,27,49,76
 108 Ahrntal,1,,39,41,80
 108 Ahrntal,2,,39,35,74
@@ -10230,7 +10125,6 @@
 108 Ahrntal,94,,1,6,7
 108 Ahrntal,98,,1,-,1
 108 Ahrntal,101,,-,1,1
-108 Ahrntal,Insgesamt,,2.948,2.869,5.817
 109 Gsies,0,,14,10,24
 109 Gsies,1,,18,11,29
 109 Gsies,2,,22,18,40
@@ -10325,7 +10219,6 @@
 109 Gsies,91,,1,-,1
 109 Gsies,93,,1,-,1
 109 Gsies,97,,-,1,1
-109 Gsies,Insgesamt,,1.111,1.069,2.180
 110 Vintl,0,,20,17,37
 110 Vintl,1,,23,19,42
 110 Vintl,2,,11,16,27
@@ -10423,7 +10316,6 @@
 110 Vintl,94,,-,2,2
 110 Vintl,96,,1,-,1
 110 Vintl,97,,-,1,1
-110 Vintl,Insgesamt,,1.651,1.590,3.241
 111 Vahrn,0,,17,30,47
 111 Vahrn,1,,35,19,54
 111 Vahrn,2,,35,29,64
@@ -10521,7 +10413,6 @@
 111 Vahrn,96,,-,1,1
 111 Vahrn,97,,-,1,1
 111 Vahrn,98,,-,1,1
-111 Vahrn,Insgesamt,,2.048,2.114,4.162
 112 Vöran,0,,5,3,8
 112 Vöran,1,,6,3,9
 112 Vöran,2,,8,2,10
@@ -10612,7 +10503,6 @@
 112 Vöran,87,,1,-,1
 112 Vöran,88,,-,1,1
 112 Vöran,97,,-,1,1
-112 Vöran,Insgesamt,,497,411,908
 113 Niederdorf,0,,10,7,17
 113 Niederdorf,1,,8,11,19
 113 Niederdorf,2,,8,8,16
@@ -10710,7 +10600,6 @@
 113 Niederdorf,97,,-,1,1
 113 Niederdorf,98,,-,1,1
 113 Niederdorf,103,,-,1,1
-113 Niederdorf,Insgesamt,,705,746,1.451
 114 Villanders,0,,7,8,15
 114 Villanders,1,,12,13,25
 114 Villanders,2,,13,14,27
@@ -10805,7 +10694,6 @@
 114 Villanders,95,,-,2,2
 114 Villanders,96,,1,1,2
 114 Villanders,97,,-,1,1
-114 Villanders,Insgesamt,,975,912,1.887
 115 Sterzing,0,,41,31,72
 115 Sterzing,1,,34,33,67
 115 Sterzing,2,,37,27,64
@@ -10904,7 +10792,6 @@
 115 Sterzing,95,,-,1,1
 115 Sterzing,96,,-,3,3
 115 Sterzing,99,,-,1,1
-115 Sterzing,Insgesamt,,3.066,3.096,6.162
 116 Feldthurns,0,,19,17,36
 116 Feldthurns,1,,25,16,41
 116 Feldthurns,2,,27,22,49
@@ -11001,7 +10888,6 @@
 116 Feldthurns,93,,-,4,4
 116 Feldthurns,96,,-,1,1
 116 Feldthurns,97,,-,1,1
-116 Feldthurns,Insgesamt,,1.342,1.345,2.687
 117 Wengen,0,,6,9,15
 117 Wengen,1,,10,11,21
 117 Wengen,2,,6,9,15
@@ -11094,7 +10980,6 @@
 117 Wengen,91,,2,-,2
 117 Wengen,93,,1,-,1
 117 Wengen,96,,1,-,1
-117 Wengen,Insgesamt,,671,602,1.273
 118 U.L.Frau i.W.-St.Felix,0,,1,8,9
 118 U.L.Frau i.W.-St.Felix,1,,3,-,3
 118 U.L.Frau i.W.-St.Felix,2,,3,2,5
@@ -11187,5 +11072,4 @@
 118 U.L.Frau i.W.-St.Felix,91,,-,1,1
 118 U.L.Frau i.W.-St.Felix,95,,1,-,1
 118 U.L.Frau i.W.-St.Felix,96,,1,-,1
-118 U.L.Frau i.W.-St.Felix,Insgesamt,,408,386,794
-Insgesamt,,,245.311,251.440,496.751
+
