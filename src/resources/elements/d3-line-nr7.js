@@ -17,7 +17,7 @@ export class D3LineNr7 {
     //https://beta.observablehq.com/@mbostock/d3-sankey-diagram
 
     let svg = d3.select('#d3-line-nr7-container svg');
-    let g = svg.append('g');
+    let g = svg.append('g')//.attr( 'transform', `translate(${10},${10})` );
     let links_g = g.append('g');
     let nodes_g = g.append('g');
 
@@ -26,11 +26,12 @@ export class D3LineNr7 {
 
     let data = getSankeyData();
 
+    //https://github.com/d3/d3-sankey/pull/53
     let sk = sankey()
       .nodeWidth(15)
-      .nodePadding(10)
+      .nodePadding(5)
       .iterations(1)
-      .extent([[1, 1], [width - 1, height - 6]]);
+      .extent([[10, 10], [width-10, height-10]]);
 
 
     // generate sankey layout

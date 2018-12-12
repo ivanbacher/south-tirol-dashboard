@@ -56,28 +56,36 @@ for (let dataSet of dataSets ) {
   data.push( { 
     year: new Date(dataSet.year, 0, 1),
     total_I: dataSet.data.reduce( (accumulator, current) => {
-      return accumulator + parseInt( current['Inländer'].replace('.','') ); //parse int ignores everything after the .
+      let val = parseInt( current['Inländer'].replace('.',''));
+      return accumulator + ( isNaN(val) === true ? 0 : val );
     }, 0),
     total_A: dataSet.data.reduce( (accumulator, current) => {
-      return accumulator + parseInt( current['Ausländer'].replace('.','') ); //parse int ignores everything after the .
+      let val = parseInt( current['Ausländer'].replace('.',''));
+      return accumulator + ( isNaN(val) === true ? 0 : val );
     }, 0),
     total_1: dataSet.data.reduce( (accumulator, current) => {
-      return accumulator + parseInt( current['davon EU-28-Staaten'].replace('.','') ); //parse int ignores everything after the .
+      let val = parseInt( current['davon EU-28-Staaten'].replace('.',''));
+      return accumulator + ( isNaN(val) === true ? 0 : val );
     }, 0),
     total_2: dataSet.data.reduce( (accumulator, current) => {
-      return accumulator + parseInt( current['davon andere europäische Staaten'].replace('.','') ); //parse int ignores everything after the .
+      let val = parseInt( current['davon andere europäische Staaten'].replace('.',''));
+      return accumulator + ( isNaN(val) === true ? 0 : val );
     }, 0),
     total_3: dataSet.data.reduce( (accumulator, current) => {
-      return accumulator + parseInt( current['davon Afrika'].replace('.','') ); //parse int ignores everything after the .
+      let val = parseInt( current['davon Afrika'].replace('.',''));
+      return accumulator + ( isNaN(val) === true ? 0 : val );
     }, 0),
     total_4: dataSet.data.reduce( (accumulator, current) => {
-      return accumulator + parseInt( current['davon Asien'].replace('.','') ); //parse int ignores everything after the .
+      let val = parseInt( current['davon Asien'].replace('.',''));
+      return accumulator + ( isNaN(val) === true ? 0 : val );
     }, 0),
     total_5: dataSet.data.reduce( (accumulator, current) => {
-      return accumulator + parseInt( current['davon Amerika-Ozeanien'].replace('.','') ); //parse int ignores everything after the .
+      let val = parseInt( current['davon Amerika-Ozeanien'].replace('.',''));
+      return accumulator + ( isNaN(val) === true ? 0 : val );
     }, 0),
     total_6: dataSet.data.reduce( (accumulator, current) => {
-      return accumulator + parseInt( current['davon Staatenlose'].replace('.','') ); //parse int ignores everything after the .
+      let val = parseInt( current['davon Staatenlose'].replace('.',''));
+      return accumulator + ( isNaN(val) === true ? 0 : val );
     }, 0)
   });
 }
