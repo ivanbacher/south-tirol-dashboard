@@ -39,3 +39,9 @@
     height: 150px;
     width: 100%;
 }
+
+#d3-line-nr7-container svg {
+    display: block;
+    height: 300px;
+    width: 100%;
+}

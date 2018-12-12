@@ -68,6 +68,11 @@
             "main": "d3.js"
           },
           {
+            "name": "d3-sankey",
+            "path": "../node_modules/d3-sankey/build",
+            "main": "d3-sankey.min.js"
+          },
+          {
             "name": "popper.js",
             "path": "../node_modules/popper.js/dist/umd",
             "main": "popper.min.js"
