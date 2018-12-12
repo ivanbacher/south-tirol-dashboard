@@ -52,7 +52,7 @@ let dataSets = [
 
 function getGroup( altersKlasse ) {
   let klasse = parseInt( altersKlasse );
-  
+  console.log(klasse)
   if (klasse <= 10) {
     return 0;
   }
@@ -137,7 +137,6 @@ function getGroupName( group ) {
   }
 }
 
-
 let line0 = [];
 let line1 = [];
 let line2 = [];
@@ -150,6 +149,7 @@ let line8 = [];
 let line9 = [];
 
 let lines = [ line0, line1, line2, line3, line4, line5, line6, line7, line8, line9 ];
+
 
 
 for ( let dataSet of dataSets ) {
@@ -180,4 +180,68 @@ for ( let dataSet of dataSets ) {
   }
 }
 
-export { lines, getGroupName };
+function getSankeyData() {
+
+  let data = dataSets[0].data;
+  let year = dataSets[0].year;
+
+  let sankData = {
+    info: {
+      year: new Date(year, 0, 1)
+    },
+    nodes: [
+      { id: 0, name: 'total', text: '' },
+      { id: 1, name: 'male', text: '' },
+      { id: 2, name: 'female', text: '' },
+      { id: 3, name: '0-10', text: '' },
+      { id: 4, name: '11-20', text: '' },
+      { id: 5, name: '21-30', text: '' },
+      { id: 6, name: '31-40', text: '' },
+      { id: 7, name: '41-50', text: '' },
+      { id: 8, name: '51-60', text: '' },
+      { id: 9, name: '61-70', text: '' },
+      { id: 10, name: '71-80', text: '' },
+      { id: 11, name: '81-90', text: '' },
+      { id: 12, name: '91-...', text: '' }
+    ],
+    links: []
+  }
+
+  let total_M = data.reduce( (accumulator, current) => {
+    let val = parseInt( current['Männer'].replace('.','') );
+    return accumulator + ( isNaN(val) === true ? 0 : val ); //parse int ignores everything after the .
+  }, 0);
+
+  let total_F = data.reduce( (accumulator, current) => {
+    let val = parseInt( current['Frauen'].replace('.','') );
+    return accumulator + ( isNaN(val) === true ? 0 : val ); //parse int ignores everything after the .
+  }, 0);
+
+  sankData.links.push( { source: 0, target: 1, value: total_M } );
+  sankData.links.push( { source: 0, target: 2, value: total_F } );
+
+  let indexOffset = 3;
+
+  for ( let i = 0; i < lines.length; i++ ) {
+    let filtered = data.filter( (current) => { return getGroup(current['Altersklassen']) === i; } );
+  
+    let total_M = filtered.reduce( (accumulator, current) => {
+      let val = parseInt( current['Männer'].replace('.','') );
+      return accumulator + ( isNaN(val) === true ? 0 : val ); //parse int ignores everything after the .
+    }, 0);
+
+    sankData.links.push( { source: 1, target: i + indexOffset, value: total_M } );
+
+    let total_F = filtered.reduce( (accumulator, current) => {
+      let val = parseInt( current['Frauen'].replace('.','') );
+      return accumulator + ( isNaN(val) === true ? 0 : val ); //parse int ignores everything after the .
+    }, 0);
+
+    sankData.links.push( { source: 2, target: i + indexOffset, value: total_F } );
+
+  }
+  
+  return sankData;
+}
+
+export { lines, getGroupName, getSankeyData };
