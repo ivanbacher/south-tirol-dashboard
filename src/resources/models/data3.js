@@ -244,4 +244,39 @@ function getSankeyData() {
   return sankData;
 }
 
-export { lines, getGroupName, getSankeyData };
+function getHistoData() {
+  let data = dataSets[0].data;
+  let year = dataSets[0].year;
+
+  let histo = [];
+
+  for ( let i = 0; i < lines.length; i++ ) {
+
+    let filtered = data.filter( (current) => { return getGroup(current['Altersklassen']) === i; } );
+
+    let total_M = filtered.reduce( (accumulator, current) => {
+      let val = parseInt( current['Männer'].replace('.','') );
+      return accumulator + ( isNaN(val) === true ? 0 : val ); //parse int ignores everything after the .
+    }, 0);
+
+    let total_F = filtered.reduce( (accumulator, current) => {
+      let val = parseInt( current['Frauen'].replace('.','') );
+      return accumulator + ( isNaN(val) === true ? 0 : val ); //parse int ignores everything after the .
+    }, 0);
+
+    let total = total_M + total_F;
+
+    let groupName = getGroupName(i);
+
+    histo.push({
+      name: groupName,
+      total: total,
+      total_M: total_M,
+      total_F: total_F
+    });
+  }
+
+  return histo;
+}
+
+export { lines, getGroupName, getSankeyData, getHistoData };

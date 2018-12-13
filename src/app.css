@@ -45,3 +45,9 @@
     height: 400px;
     width: 100%;
 }
+
+#d3-line-nr8-container svg {
+    display: block;
+    height: 300px;
+    width: 100%;
+}
