@@ -10,7 +10,7 @@ import municipalities from '/data/shape_files/original/Municipalities.json!json'
 
 @inject(Element)
 
-export class D3Map {
+export class D3MapNr1 {
   @bindable value;
 
   constructor(Element) {
@@ -19,7 +19,7 @@ export class D3Map {
 
   attached() {
 
-    let svg = d3.select('svg');
+    let svg = d3.select('#d3-map-nr1-container svg');
 
     //let width = +svg.attr('width');
     //let height = +svg.attr('height');
