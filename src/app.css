@@ -1,3 +1,7 @@
+html,body {
+    height: 100%;
+}
+
 #d3-map-nr1-container svg, #d3-map-nr2-container svg {
     display: block;
     height: 500px;

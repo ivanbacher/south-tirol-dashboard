@@ -14,7 +14,6 @@ export class D3LineNr6 {
 
   attached() {
 
-        
     let container = d3.select('#d3-line-nr6-container');
 
     let index = 0;
