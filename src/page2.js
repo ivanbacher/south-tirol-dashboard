@@ -49,10 +49,24 @@ export class Page2 {
 
     lines.reverse(); //reverse to have the youger groups outside
 
+
+
+
+
+
     let radius = 100;
     let padding = 10;
     let radiusStep = 30;
     let index = 0;
+
+    let line = d3.areaRadial()
+      .angle( (d) => { return x(d.year); })
+      .innerRadius( (d) => { return radius - radiusStep; });
+
+    let x = d3.scaleTime()
+      .domain( [ new Date(1995, 0, 1), new Date(2017, 0, 1) ] );
+
+    let y = d3.scaleLinear();
 
     let cont1 = svg.append('g')
       .attr( 'transform', `translate(${width / 2},${height / 2})` );
@@ -77,19 +91,13 @@ export class Page2 {
         .attr('fr', radius - radiusStep)
         .attr('r', radius);
 
-      let x = d3.scaleTime()
-        .domain( [ new Date(1995, 0, 1), new Date(2017, 0, 1) ] )
-        .range( [ startA, endA ] );
-
-      let y = d3.scaleLinear()
-        .domain( [ yMin, yMax ] )
-        .range( [ radius - radiusStep, radius ] );
+      //calibrate scales
+      x.range( [ startA, endA ] );
+      y.domain( [ yMin, yMax ] )
+      y.range( [ radius - radiusStep, radius ] );
 
 
-      let line = d3.areaRadial()
-        .angle( (d) => { return x(d.year); })
-        .innerRadius( (d) => { return radius - radiusStep; })
-        .outerRadius( (d) => { return y(d.total_M); });
+      line.outerRadius( (d) => { return y(d.total_M); });
 
       let g1 = cont1.append('g');
 
@@ -97,8 +105,21 @@ export class Page2 {
         .data([data])
         .attr('class', 'radialArea')
         .attr('fill', `url(#${gid})`)
-        .attr('stroke', `url(#${gid})`)
+        .attr('stroke', 'none')
         .attr('d', line);
+      
+      g1.selectAll('.MM')
+        .data(data)
+        .enter().append('circle')
+        .attr('cx', (d) => {
+          return line.outerRadius()(d) * Math.cos( line.angle()(d) - degToRad(90) );
+        })
+        .attr('cy', (d) => {
+          return line.outerRadius()(d) * Math.sin( line.angle()(d) - degToRad(90) );
+        })
+        .attr('stroke', 'black')
+        .attr('fill', 'none')
+        .attr('r', 1.5);
 
       // -- -- -- -- - -- --
       // -- -- -- -- - -- --
@@ -123,6 +144,7 @@ export class Page2 {
       x.range([ startA, endA ]);
       y.domain([ yMin, yMax ] );
 
+      //reset line
       line.outerRadius( (d) => { return y(d.total_F); });
 
       let g2 = cont2.append('g');
@@ -131,71 +153,81 @@ export class Page2 {
         .data([data])
         .attr('class', 'line')
         .attr('fill', `url(#${gid})`)
-        .attr('stroke', `url(#${gid})`)
+        .attr('stroke', 'none')
         .attr('d', line);
+
+      g2.selectAll('.FF')
+        .data(data)
+        .enter().append('circle')
+        .attr('cx', (d) => {
+          return line.outerRadius()(d) * Math.cos( line.angle()(d) - degToRad(90) );
+        })
+        .attr('cy', (d) => {
+          return line.outerRadius()(d) * Math.sin( line.angle()(d) - degToRad(90) );
+        })
+        .attr('stroke', 'black')
+        .attr('fill', 'none')
+        .attr('r', 1.5);
 
       radius += radiusStep;
       index ++;
     }
 
+    //ok now lets add some date lables
+/*
+    let lablesContainer = svg.append('g')
+      .attr('transform', `translate(${width/2}, ${height/2})`);
 
+    let startA = degToRad(0);
+    let endA = degToRad(-180);
+    
+    x.range( [ startA, endA ] );
 
+    lablesContainer.selectAll('.asds')
+      .data(lines[0])
+      .enter().append('circle')
+      .attr('cx', (d) => {
+        return radius * Math.cos( line.angle()(d) );
+      })
+      .attr('cy', (d) => {
+        console.log(d)
+        return radius * Math.sin( line.angle()(d) );
+      })
+      .attr('stroke', 'black')
+      .attr('r', 4);
 
-
-
-
-
-
-
-    /*
-    //let radius = Math.min(width, height) / 2;
-    let radius = 200;
-
-    let yearsCount = lines[0].length;
-    let pieFillers = lines[0].map( ()=> { return 1; });
+    
+    let pieSlices = d3.range( lines[0].length ).map( () => { return 1; });
 
     let arc = d3.arc()
-      .outerRadius(radius)
-      .innerRadius(radius - 10)
-      //.startAngle(0)
-      //.endAngle(Math.PI * 2);
+      .outerRadius( radius )
+      .innerRadius( radius - radiusStep );
 
-    let pie = d3.pie()
-      .sort(null)
-      .value(function(d) { return d; });
+    let pi = d3.pie()
+      .startAngle( -90 * (Math.PI / 180) )
+      .endAngle( 90 * (Math.PI / 180) );
 
-    let arcs = pie(pieFillers);
+    let arcs = pi(pieSlices);
 
+    let slices = lablesContainer.selectAll('path')
+      .data(arcs).enter()
+      .append('g');
 
-    let g = svg.append('g')
-      .attr('transform', `translate(${width / 2},${height / 2})`);
-
-    let gg = g.selectAll('path')
-      .data(arcs)
-      .enter()
-      .append("g")
-      .attr("class", "arc")
-    
-    gg.append('path')
-        .attr('d', arc)
-        .attr('fill', 'none')
-        .attr('stroke', 'black');
+    slices.append('path')
+      .attr('d', arc)
+      .attr('fill', 'none')
+      .attr('stroke', 'black');
     */
-
-    function degToRad( deg ) {
-      return deg * (Math.PI / 180);
-    }
-    function radToDeg( rad ) {
-      return rad * (180 / Math.PI);
-    }
-
-    // ---
-
-   
   }
 }
 
+function degToRad( deg ) {
+  return deg * (Math.PI / 180);
+}
 
+function radToDeg( rad ) {
+  return rad * (180 / Math.PI);
+}
 
 
 /*
