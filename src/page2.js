@@ -47,6 +47,106 @@ export class Page2 {
       .attr('offset', '100%')
       .attr('stop-color', 'red');
 
+    lines.reverse(); //reverse to have the youger groups outside
+
+    let radius = 100;
+    let padding = 10;
+    let radiusStep = 30;
+    let index = 0;
+
+    let cont1 = svg.append('g')
+      .attr( 'transform', `translate(${width / 2},${height / 2})` );
+
+    let cont2 = svg.append('g')
+      .attr( 'transform', `translate(${width / 2},${height / 2})` );
+
+    //loop though the datasets to create the radial lines
+    for ( let data of lines ) {
+
+      let startA = degToRad(-90);
+      let endA = degToRad(90);
+
+      let gid = `mygradM${index}`;
+
+      let yMin =  d3.min( data, (d) => { return d.total_M; });
+      let yMax =  d3.max( data, (d) => { return d.total_M; });
+
+      defs.append('radialGradient')
+        .attr('id', gid)
+        .attr('href', '#gradcolors1')
+        .attr('fr', radius - radiusStep)
+        .attr('r', radius);
+
+      let x = d3.scaleTime()
+        .domain( [ new Date(1995, 0, 1), new Date(2017, 0, 1) ] )
+        .range( [ startA, endA ] );
+
+      let y = d3.scaleLinear()
+        .domain( [ yMin, yMax ] )
+        .range( [ radius - radiusStep, radius ] );
+
+
+      let line = d3.areaRadial()
+        .angle( (d) => { return x(d.year); })
+        .innerRadius( (d) => { return radius - radiusStep; })
+        .outerRadius( (d) => { return y(d.total_M); });
+
+      let g1 = cont1.append('g');
+
+      g1.append('path')
+        .data([data])
+        .attr('class', 'radialArea')
+        .attr('fill', `url(#${gid})`)
+        .attr('stroke', `url(#${gid})`)
+        .attr('d', line);
+
+      // -- -- -- -- - -- --
+      // -- -- -- -- - -- --
+      // -- -- -- -- - -- --
+      // -- -- -- -- - -- --
+
+      gid = `mygradF${index}`;
+
+      startA = degToRad(-90);
+      endA = degToRad(-270);
+
+      defs.append('radialGradient')
+        .attr('id', gid)
+        .attr('href', '#gradcolors2')
+        .attr('fr', radius - radiusStep)
+        .attr('r', radius);
+
+      yMin =  d3.min( data, (d) => { return d.total_F; });
+      yMax =  d3.max( data, (d) => { return d.total_F; });
+
+      //reset scales
+      x.range([ startA, endA ]);
+      y.domain([ yMin, yMax ] );
+
+      line.outerRadius( (d) => { return y(d.total_F); });
+
+      let g2 = cont2.append('g');
+
+      g2.append('path')
+        .data([data])
+        .attr('class', 'line')
+        .attr('fill', `url(#${gid})`)
+        .attr('stroke', `url(#${gid})`)
+        .attr('d', line);
+
+      radius += radiusStep;
+      index ++;
+    }
+
+
+
+
+
+
+
+
+
+
     /*
     //let radius = Math.min(width, height) / 2;
     let radius = 200;
@@ -91,7 +191,16 @@ export class Page2 {
 
     // ---
 
-    function createGradient(index, startA, endA, r) {
+   
+  }
+}
+
+
+
+
+/*
+ 
+  function createGradient(index, startA, endA, r) {
 
       let grad = def.append('linearGradient')
         .attr('id', `Gradient-${index}`)
@@ -164,17 +273,7 @@ export class Page2 {
         .attr('fill', 'none')
         .attr('stroke', 'blue')
         .attr('d', line);
-      /*
-      g.selectAll(".dot")
-        .data(data)
-        .enter().append("circle")
-          .attr("class", "dot")
-          .attr("cx", line.angle() )
-          .attr("cy", line.radius() )
-          .attr("r", 3.5);
-
-      console.log( line.radius()(data[1]) )
-      */
+  
       //console.log( line.angle()(data[0]) )
     }
     function createRadialLine2( container, data, radius, arcWidth, padding, startA, endA, yMin, yMax) {
@@ -199,8 +298,6 @@ export class Page2 {
         .attr('stroke', 'red')
         .attr('d', line);
     }
-
-    // ---
 
     function createRadialArea1( container, data, radius, arcWidth, padding, startA, endA, yMin, yMax, gid ) {
 
@@ -247,60 +344,4 @@ export class Page2 {
         .attr('stroke', `url(#${gid})`)
         .attr('d', line);
     }
-
-    lines.reverse(); //reverse to have the youger groups outside
-
-    let radius = 100;
-    let padding = 10;
-    let radiusStep = 30;
-    let index = 0;
-
-    for ( let data of lines ) {
-
-      let startA = degToRad(-90);
-      let endA = degToRad(90);
-
-      let yMin =  d3.min( data, (d) => { return d.total_M; });
-      let yMax =  d3.max( data, (d) => { return d.total_M; });
-
-      let cont1 = svg.append('g')
-        .attr( 'transform', `translate(${width / 2},${height / 2})` );
-
-
-      defs.append('radialGradient')
-        .attr('id', 'mygradM' + index)
-        .attr('href', '#gradcolors1')
-        .attr('fr', radius - radiusStep)
-        .attr('r', radius);
-
-      //createGradient(index, startA, endA, radius);
-      //createArc1( cont1, radius, radiusStep, startA, endA, `Gradient-${index}` );
-      //createRadialLine1( cont1, data, radius, radiusStep, padding, startA, endA, yMin, yMax);
-      createRadialArea1( cont1, data, radius, radiusStep, padding, startA, endA, yMin, yMax, `mygradM${index}`);
-
-      // -- -- -- -- - -- --
-
-      defs.append('radialGradient')
-        .attr('id', 'mygradF' + index)
-        .attr('href', '#gradcolors2')
-        .attr('fr', radius - radiusStep)
-        .attr('r', radius);
-
-      startA = degToRad(-90);
-      endA = degToRad(-270);
-
-      yMin =  d3.min( data, (d) => { return d.total_F; });
-      yMax =  d3.max( data, (d) => { return d.total_F; });
-
-      let cont2 = svg.append('g')
-        .attr( 'transform', `translate(${width / 2},${height / 2})` );
-
-      //createArc2( cont2, radius, radiusStep, startA, endA, `Gradient-${index}` );
-      //createRadialLine2( cont2, data, radius, radiusStep, padding, startA, endA, yMin, yMax);
-      createRadialArea2( cont2, data, radius, radiusStep, padding, startA, endA, yMin, yMax, `mygradF${index}`);
-
-      radius += radiusStep;
-      index ++;
-    }
-  }
-}
+*/
