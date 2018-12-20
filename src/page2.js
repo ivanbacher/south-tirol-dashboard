@@ -32,7 +32,7 @@ export class Page2 {
     gradcolors1.append('stop')
       .attr('offset', '100%')
       .attr('stop-color', 'blue');
-    
+
     let gradcolors2 = defs.append('radialGradient')
       .attr('id', 'gradcolors2')
       .attr('gradientUnits', 'userSpaceOnUse')
@@ -85,6 +85,11 @@ export class Page2 {
     function degToRad( deg ) {
       return deg * (Math.PI / 180);
     }
+    function radToDeg( rad ) {
+      return rad * (180 / Math.PI);
+    }
+
+    // ---
 
     function createGradient(index, startA, endA, r) {
 
@@ -194,6 +199,8 @@ export class Page2 {
         .attr('stroke', 'red')
         .attr('d', line);
     }
+
+    // ---
 
     function createRadialArea1( container, data, radius, arcWidth, padding, startA, endA, yMin, yMax, gid ) {
 
