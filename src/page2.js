@@ -55,8 +55,8 @@ export class Page2 {
 
 
     let radius = 100;
-    let padding = 10;
-    let radiusStep = 30;
+    let padding = 5;
+    let radiusStep = 40;
     let index = 0;
 
     let line = d3.areaRadial()
@@ -93,8 +93,8 @@ export class Page2 {
 
       //calibrate scales
       x.range( [ startA, endA ] );
-      y.domain( [ yMin, yMax ] )
-      y.range( [ radius - radiusStep, radius ] );
+      y.domain( [ yMin, yMax ] );
+      y.range( [ (radius - radiusStep) + padding, radius - padding] );
 
 
       line.outerRadius( (d) => { return y(d.total_M); });
@@ -117,9 +117,9 @@ export class Page2 {
         .attr('cy', (d) => {
           return line.outerRadius()(d) * Math.sin( line.angle()(d) - degToRad(90) );
         })
-        .attr('stroke', 'black')
-        .attr('fill', 'none')
-        .attr('r', 1.5);
+        .attr('stroke', 'none')
+        .attr('fill', 'black')
+        .attr('r', 1);
 
       // -- -- -- -- - -- --
       // -- -- -- -- - -- --
@@ -165,37 +165,63 @@ export class Page2 {
         .attr('cy', (d) => {
           return line.outerRadius()(d) * Math.sin( line.angle()(d) - degToRad(90) );
         })
-        .attr('stroke', 'black')
-        .attr('fill', 'none')
-        .attr('r', 1.5);
+        .attr('stroke', 'none')
+        .attr('fill', 'black')
+        .attr('r', 1);
 
       radius += radiusStep;
       index ++;
     }
 
     //ok now lets add some date lables
-/*
-    let lablesContainer = svg.append('g')
+
+    let data = lines[0].map( (el) => { return { year: el.year }; } );
+
+    let lablesContainer1 = svg.append('g')
       .attr('transform', `translate(${width/2}, ${height/2})`);
 
-    let startA = degToRad(0);
-    let endA = degToRad(-180);
+    let startA = degToRad(-90);
+    let endA = degToRad(90);
     
     x.range( [ startA, endA ] );
 
-    lablesContainer.selectAll('.asds')
-      .data(lines[0])
+    lablesContainer1.selectAll('.MM')
+      .data(data)
+      .enter().append('text')
+      .attr('dx', (d) => {
+        return radius * Math.cos( line.angle()(d) - degToRad(90) );
+      })
+      .attr('dy', (d) => {
+        return radius * Math.sin( line.angle()(d) - degToRad(90) );
+      })
+      .text( (d) => { return d.year.getFullYear() } );
+    
+    lablesContainer1.selectAll('.MMM')
+      .data(data)
+      .enter().append('path')
+      .attr('d', (d) => {
+        let x1 = radius * Math.cos( line.angle()(d) - degToRad(90) );
+        let y1 = radius * Math.sin( line.angle()(d) - degToRad(90) );
+        
+        let x2 = 0;
+        let y2 = 0;
+
+        return `M ${x1} ${y1} L ${x2} ${y2}`;
+      })
+      .attr('stroke', 'black');
+      /*
       .enter().append('circle')
       .attr('cx', (d) => {
-        return radius * Math.cos( line.angle()(d) );
+        return radius * Math.cos( line.angle()(d) - degToRad(90) );
       })
       .attr('cy', (d) => {
-        console.log(d)
-        return radius * Math.sin( line.angle()(d) );
+        return radius * Math.sin( line.angle()(d) - degToRad(90) );
       })
-      .attr('stroke', 'black')
+      .attr('stroke', 'none')
+      .attr('fill', 'green')
       .attr('r', 4);
-
+      */
+/*
     
     let pieSlices = d3.range( lines[0].length ).map( () => { return 1; });
 
