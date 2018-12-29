@@ -107,7 +107,7 @@ export class Page2 {
         .attr('fill', `url(#${gid})`)
         .attr('stroke', 'none')
         .attr('d', line);
-      
+
       g1.selectAll('.MM')
         .data(data)
         .enter().append('circle')
@@ -173,77 +173,108 @@ export class Page2 {
       index ++;
     }
 
-    //ok now lets add some date lables
+    /*
+      Lables
+    */
 
     let data = lines[0].map( (el) => { return { year: el.year }; } );
 
-    let lablesContainer1 = svg.append('g')
-      .attr('transform', `translate(${width/2}, ${height/2})`);
+    let lablesContainer1 = cont1.append('g');
 
     let startA = degToRad(-90);
     let endA = degToRad(90);
-    
+
     x.range( [ startA, endA ] );
 
     lablesContainer1.selectAll('.MM')
       .data(data)
       .enter().append('text')
-      .attr('dx', (d) => {
+      .attr('x', (d) => {
         return radius * Math.cos( line.angle()(d) - degToRad(90) );
       })
-      .attr('dy', (d) => {
+      .attr('y', (d) => {
         return radius * Math.sin( line.angle()(d) - degToRad(90) );
       })
-      .text( (d) => { return d.year.getFullYear() } );
+      .style('text-anchor', 'middle')
+      .text( (d) => { return d.year.getFullYear(); } );
+
+
+    let lablesContainer2 = cont2.append('g');
     
-    lablesContainer1.selectAll('.MMM')
+    startA = degToRad(-90);
+    endA = degToRad(-270);
+
+    x.range( [ startA, endA ] );
+      
+    lablesContainer2.selectAll('.FF')
       .data(data)
-      .enter().append('path')
-      .attr('d', (d) => {
-        let x1 = radius * Math.cos( line.angle()(d) - degToRad(90) );
-        let y1 = radius * Math.sin( line.angle()(d) - degToRad(90) );
-        
-        let x2 = 0;
-        let y2 = 0;
-
-        return `M ${x1} ${y1} L ${x2} ${y2}`;
-      })
-      .attr('stroke', 'black');
-      /*
-      .enter().append('circle')
-      .attr('cx', (d) => {
+      .enter().append('text')
+      .attr('x', (d) => {
         return radius * Math.cos( line.angle()(d) - degToRad(90) );
       })
-      .attr('cy', (d) => {
+      .attr('y', (d) => {
         return radius * Math.sin( line.angle()(d) - degToRad(90) );
       })
-      .attr('stroke', 'none')
-      .attr('fill', 'green')
-      .attr('r', 4);
-      */
-/*
-    
-    let pieSlices = d3.range( lines[0].length ).map( () => { return 1; });
+      .style('text-anchor', 'middle')
+      .text( (d) => { return d.year.getFullYear(); } );
 
-    let arc = d3.arc()
-      .outerRadius( radius )
-      .innerRadius( radius - radiusStep );
-
-    let pi = d3.pie()
-      .startAngle( -90 * (Math.PI / 180) )
-      .endAngle( 90 * (Math.PI / 180) );
-
-    let arcs = pi(pieSlices);
-
-    let slices = lablesContainer.selectAll('path')
-      .data(arcs).enter()
-      .append('g');
-
-    slices.append('path')
-      .attr('d', arc)
-      .attr('fill', 'none')
-      .attr('stroke', 'black');
+    /*
+      Helper lines
     */
+    let helperlinesContainer1 = cont1.append('g');
+    
+    startA = degToRad(-90);
+    endA = degToRad(90);
+    x.range( [ startA, endA ] );
+    
+    helperlinesContainer1.selectAll('.MMM')
+      .data(data)
+      .enter().append('line')
+      .attr('x1', (d) => { return radius * Math.cos( line.angle()(d) - degToRad(90) ); } )
+      .attr('y1', (d) => { return radius * Math.sin( line.angle()(d) - degToRad(90) ); } )
+      .attr('x2', 0)
+      .attr('y2', 0)
+      .attr('stroke', 'lightgrey')
+      .attr('stroke-dasharray', '4')
+      .attr('opacity', '0.5');
+
+
+
+    let helperlinesContainer2 = cont2.append('g');
+    
+    startA = degToRad(-90);
+    endA = degToRad(-270);
+    x.range( [ startA, endA ] );
+
+    helperlinesContainer2.selectAll('.FFF')
+      .data(data)
+      .enter().append('line')
+      .attr('x1', (d) => { return radius * Math.cos( line.angle()(d) - degToRad(90) ); } )
+      .attr('y1', (d) => { return radius * Math.sin( line.angle()(d) - degToRad(90) ); } )
+      .attr('x2', 0)
+      .attr('y2', 0)
+      .attr('stroke', 'lightgrey')
+      .attr('stroke-dasharray', '4')
+      .attr('opacity', '0.5');
+    
+    /*
+      Middle square
+    */
+    
+    let midCont = svg.append('g')
+      .attr('transform', `translate(${width/2}, ${height/2})`);
+
+    let r_height = 50;
+    let r_width = (radius - radiusStep) * 2;
+
+    midCont.append('rect')
+      .attr('x', - r_width/2)
+      .attr('y', - r_height/2)
+      .attr('height', r_height)
+      .attr('width', r_width);
+    
+    cont1.attr( 'transform', `translate(${ width / 2 },${ (height / 2) - r_height / 2} )` );
+    cont2.attr( 'transform', `translate(${ width / 2 },${ (height / 2) + r_height / 2} )` );
   }
 }
 
