@@ -3,7 +3,7 @@ import {bindable, inject} from 'aurelia-framework';
 import * as d3 from 'd3';
 import {sankey, sankeyLinkHorizontal} from 'd3-sankey';
 
-import { getSankeyData } from '../models/data3';
+import { getSankeyData } from '../helpers/data3';
 
 @inject(Element)
 

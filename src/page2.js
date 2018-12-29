@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 
-import { lines, getGroupName } from './resources/models/data3';
+import { lines, getGroupName } from './resources/helpers/data3';
 
 /*
   Research -- Resources

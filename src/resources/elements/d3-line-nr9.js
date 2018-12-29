@@ -2,7 +2,7 @@ import {bindable, inject} from 'aurelia-framework';
 
 import * as d3 from 'd3';
 
-import { getHistoData } from '../models/data3';
+import { getHistoData } from '../helpers/data3';
 
 @inject(Element)
 

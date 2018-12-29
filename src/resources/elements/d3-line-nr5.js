@@ -2,7 +2,7 @@ import {bindable, inject} from 'aurelia-framework';
 
 import * as d3 from 'd3';
 
-import { lines, getGroupName } from '../models/data3';
+import { lines, getGroupName } from '../helpers/data3';
 
 @inject(Element)
 
