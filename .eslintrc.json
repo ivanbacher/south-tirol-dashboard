@@ -2,8 +2,12 @@
   "extends": "./node_modules/aurelia-tools/.eslintrc.json",
   "parserOptions": {
     "ecmaFeatures": {
-      "legacyDecorators": true,
-      "no-trailing-spaces":  ["error", { "skipBlankLines": true }]
+      "legacyDecorators": true
     }
+  },
+  "rules": {
+    "no-multiple-empty-lines":  "off",
+    "padded-blocks": "off",
+    "no-trailing-spaces": "off"
   }
 }
