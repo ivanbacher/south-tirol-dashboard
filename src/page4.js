@@ -31,7 +31,189 @@ export class Page4 {
 
   attached() {
 
-    let svg = d3.select('svg');
-    let defs = svg.append('defs');
+    let svg1 = d3.select('#vis-01');
+    let defs1 = svg1.append('defs');
+
+    createGradient( defs1, 'vis-01-glow' );
+
+    let svg2 = d3.select('#vis-02');
+    let defs2 = svg2.append('defs');
+
+    let svg3 = d3.select('#vis-03');
+    let defs3 = svg3.append('defs');
+
+
+    let width1 = parseInt( svg1.style('width'), 10 );
+    let width2 = parseInt( svg2.style('width'), 10 );
+    let width3 = parseInt( svg3.style('width'), 10 );
+
+    svg1.style('height', (width1 / 3) * 2 + 'px');
+    svg2.style('height', width2 / 2 + 'px');
+    svg3.style('height', width3 / 2 + 'px');
+
+    let height1 = parseInt( svg1.style('height'), 10 );
+    let height2 = parseInt( svg2.style('height'), 10 );
+    let height3 = parseInt( svg3.style('height'), 10 );
+
+    console.log(`svg1 ${width1} x ${height1}`);
+    console.log(`svg2 ${width2} x ${height2}`);
+    console.log(`svg3 ${width3} x ${height3}`);
+
+    //create main vis
+    let info1 = {
+      radius: 100,
+      padding: 5,
+      radiusStep: 40,
+      svg: svg1,
+      defs: defs1,
+      width: width1,
+      height: height1,
+      id: 'vis-01'
+    };
+
+    createCustomVis(info1);
   }
+}
+
+function createCustomVis(info) {
+  let svg = info.svg;
+  let defs = info.defs;
+  let width = info.width;
+  let height = info.height;
+  let radius = info.radius || 50;
+  let padding = info.padding || 2;
+  let radiusStep = info.radiusStep || 20;
+  let index = 0;
+  let id = info.id;
+
+  //
+  let ragc = defs.append('radialGradient')
+    .attr('id', `${id}-radial-area-gradient-colors`)
+    .attr('gradientUnits', 'userSpaceOnUse')
+    .attr('cx', '0')
+    .attr('cy', '0');
+
+  ragc.append('stop')
+    .attr('offset', '0%')
+    .attr('stop-color', 'white');
+
+  ragc.append('stop')
+    .attr('offset', '100%')
+    .attr('stop-color', 'blue');
+  //
+
+  let line = d3.areaRadial()
+    .angle( (d) => { return x(d.year); })
+    .innerRadius( (d) => { return radius - radiusStep; });
+
+  let x = d3.scaleTime()
+    .domain( [ new Date(1995, 0, 1), new Date(2017, 0, 1) ] );
+
+  let y = d3.scaleLinear();
+
+  let container = svg.append('g');
+  
+  let helperlines = container.append('g').attr('class', 'helperlines');
+  let paths = container.append('g').attr('class', 'paths');
+  let points = container.append('g').attr('class', 'points');
+  let lables = container.append('g').attr('class', 'lables');
+  
+
+
+  for ( let data of lines ) {
+
+    let startA = degToRad(-90);
+    let endA = degToRad(90);
+
+    let yMin =  d3.min( data, (d) => { return d.total_M; });
+    let yMax =  d3.max( data, (d) => { return d.total_M; });
+
+    let gid = `${id}-gradient-${index}`;
+
+    defs.append('radialGradient')
+      .attr('id', gid)
+      .attr('href', `#${id}-radial-area-gradient-colors`)
+      .attr('fr', radius - radiusStep)
+      .attr('r', radius);
+
+    //calibrate scales
+    x.range( [ startA, endA ] );
+    y.domain( [ yMin, yMax ] );
+    y.range( [ (radius - radiusStep) + padding, radius - padding] );
+
+    line.outerRadius( (d) => { return y(d.total_M); });
+
+    
+
+    paths.append('path')
+      .data([data])
+      .attr('class', 'radialArea')
+      .attr('fill', `url(#${gid})`)
+      .attr('stroke', 'none')
+      .attr('d', line)
+      .style('filter', `url(#${id}-glow)`);
+
+    points.selectAll('.points')
+      .data(data)
+      .enter().append('circle')
+      .attr('cx', (d) => {
+        return line.outerRadius()(d) * Math.cos( line.angle()(d) - degToRad(90) );
+      })
+      .attr('cy', (d) => {
+        return line.outerRadius()(d) * Math.sin( line.angle()(d) - degToRad(90) );
+      })
+      .attr('stroke', 'none')
+      .attr('fill', 'black')
+      .attr('r', 1);
+
+    radius += radiusStep;
+    index ++;
+  }
+
+  //need to have this here so radius is at max
+  container.attr( 'transform', `translate(${width / 2},${(height / 2) + radius/2 })` );
+
+  /*
+    Lables
+  */
+  let data = lines[0].map( (el) => { return { year: el.year }; } );
+
+  let startA = degToRad(-90);
+  let endA = degToRad(90);
+
+  x.range( [ startA, endA ] );
+
+  lables.selectAll('.lables')
+    .data(data)
+    .enter().append('text')
+    .attr('x', (d) => {
+      return radius * Math.cos( line.angle()(d) - degToRad(90) );
+    })
+    .attr('y', (d) => {
+      return radius * Math.sin( line.angle()(d) - degToRad(90) );
+    })
+    .style('text-anchor', 'middle')
+    .text( (d) => { return d.year.getFullYear(); } );
+
+  /*
+    Helper lines
+  */  
+  startA = degToRad(-90);
+  endA = degToRad(90);
+  x.range( [ startA, endA ] );
+   
+  helperlines.selectAll('.helperlines')
+    .data(data)
+    .enter().append('line')
+    .attr('x1', (d) => { return radius * Math.cos( line.angle()(d) - degToRad(90) ); } )
+    .attr('y1', (d) => { return radius * Math.sin( line.angle()(d) - degToRad(90) ); } )
+    .attr('x2', (d) => { return (100 - radiusStep) * Math.cos( line.angle()(d) - degToRad(90) ); } )
+    .attr('y2', (d) => { return (100 - radiusStep) * Math.sin( line.angle()(d) - degToRad(90) ); } )
+    .attr('stroke', 'lightgrey')
+    .attr('stroke-dasharray', '4')
+    .attr('opacity', '0.5');
+}
+
+function degToRad( deg ) {
+  return deg * (Math.PI / 180);
 }
