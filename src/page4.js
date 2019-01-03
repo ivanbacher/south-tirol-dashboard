@@ -72,7 +72,7 @@ export class Page4 {
       width: width1,
       height: height1,
       id: 'vis-01',
-      pointR: 2
+      pointR: 1.5
     };
 
     createCustomVis(info1);
@@ -141,8 +141,8 @@ function createCustomVis(info) {
     defs.append('radialGradient')
       .attr('id', gid)
       .attr('href', `#${id}-radial-area-gradient-colors`)
-      .attr('fr', radius - radiusStep)
-      .attr('r', radius);
+      .attr('fr', (radius - radiusStep) + padding)
+      .attr('r', radius - padding);
 
     //calibrate scales
     x.range( [ startA, endA ] );
@@ -237,8 +237,8 @@ function createCustomVis(info) {
     .enter().append('line')
     .attr('x1', (d) => { return lab1R * Math.cos( line.angle()(d) - degToRad(90) ); } )
     .attr('y1', (d) => { return lab1R * Math.sin( line.angle()(d) - degToRad(90) ); } )
-    .attr('x2', (d) => { return (startR - radiusStep) * Math.cos( line.angle()(d) - degToRad(90) ); } )
-    .attr('y2', (d) => { return (startR - radiusStep) * Math.sin( line.angle()(d) - degToRad(90) ); } )
+    .attr('x2', (d) => { return ((startR - radiusStep) + padding) * Math.cos( line.angle()(d) - degToRad(90) ); } )
+    .attr('y2', (d) => { return ((startR - radiusStep) + padding) * Math.sin( line.angle()(d) - degToRad(90) ); } )
     .attr('stroke', 'lightgrey')
     .attr('stroke-dasharray', '4')
     .attr('opacity', '0.5');
