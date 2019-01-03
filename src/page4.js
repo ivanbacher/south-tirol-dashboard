@@ -31,8 +31,6 @@ export class Page4 {
 
   attached() {
 
-    console.log(lines)
-
     let svg1 = d3.select('#vis-01');
     let defs1 = svg1.append('defs');
 
@@ -72,7 +70,8 @@ export class Page4 {
       width: width1,
       height: height1,
       id: 'vis-01',
-      pointR: 1.5
+      pointR: 1.5,
+      mainColor: '#606D5D'
     };
 
     createCustomVis(info1);
@@ -91,6 +90,7 @@ function createCustomVis(info) {
   let index = 0;
   let pointR = info.pointR || 1;
   let id = info.id;
+  let mainColor = info.mainColor;
 
   //
   let ragc = defs.append('radialGradient')
@@ -105,12 +105,17 @@ function createCustomVis(info) {
 
   ragc.append('stop')
     .attr('offset', '100%')
-    .attr('stop-color', '#606D5D');
+    .attr('stop-color', mainColor);
   //
+
+  let line1 = d3.lineRadial()
+    .angle( (d) => { return x(d.year); })
+    .radius( (d) => { return y(d.total); });
 
   let line = d3.areaRadial()
     .angle( (d) => { return x(d.year); })
-    .innerRadius( (d) => { return (radius - radiusStep) + padding; });
+    .innerRadius( (d) => { return (radius - radiusStep) + padding; })
+    .outerRadius( (d) => { return y(d.total); });
 
   let x = d3.scaleTime()
     .domain( [ new Date(1995, 0, 1), new Date(2017, 0, 1) ] );
@@ -120,7 +125,8 @@ function createCustomVis(info) {
   let container = svg.append('g');
   
   let helperlines = container.append('g').attr('class', 'helperlines');
-  let paths = container.append('g').attr('class', 'paths');
+  let paths2 = container.append('g').attr('class', 'paths2');
+  let paths1 = container.append('g').attr('class', 'paths1');
   let arcs = container.append('g').attr('class', 'arcs');
   let points = container.append('g').attr('class', 'points');
   let lables1 = container.append('g').attr('class', 'lables');
@@ -149,10 +155,11 @@ function createCustomVis(info) {
     y.domain( [ yMin, yMax ] );
     y.range( [ (radius - radiusStep) + padding, radius - padding] );
 
-    line.outerRadius( (d) => { return y(d.total); });
+   
 
 
     //create arcs for debugging
+    /*
     let arc = d3.arc()
       .outerRadius( radius )
       .innerRadius( radius - radiusStep)
@@ -164,8 +171,22 @@ function createCustomVis(info) {
       .attr('fill', 'none')
       .attr('stroke', 'lightgrey')
       .attr('opacity', '0.3');
-    
-    let radialLineContainer = paths.append('g')
+    */
+
+    let lineContainer = paths1.append('g')
+      .attr('id', `group-${data[0].group}`);
+
+    lineContainer.append('path')
+      .data([data])
+      .attr('class', 'radialline')
+      .attr('fill', 'none')
+      .attr('stroke', mainColor)
+      .attr('opacity', '0.8')
+      .attr('d', line1);
+      
+
+
+    let radialLineContainer = paths2.append('g')
       .attr('id', `group-${data[0].group}`);
 
     radialLineContainer.append('path')
@@ -189,7 +210,7 @@ function createCustomVis(info) {
         return line.outerRadius()(d) * Math.sin( line.angle()(d) - degToRad(90) );
       })
       .attr('stroke', 'none')
-      .attr('fill', 'black')
+      .attr('fill', mainColor)
       .attr('r', pointR)
       .attr('opacity', '0.8');
 
