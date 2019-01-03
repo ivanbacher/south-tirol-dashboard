@@ -105,12 +105,12 @@ function createCustomVis(info) {
 
   ragc.append('stop')
     .attr('offset', '100%')
-    .attr('stop-color', 'blue');
+    .attr('stop-color', '#606D5D');
   //
 
   let line = d3.areaRadial()
     .angle( (d) => { return x(d.year); })
-    .innerRadius( (d) => { return radius - radiusStep; });
+    .innerRadius( (d) => { return (radius - radiusStep) + padding; });
 
   let x = d3.scaleTime()
     .domain( [ new Date(1995, 0, 1), new Date(2017, 0, 1) ] );
