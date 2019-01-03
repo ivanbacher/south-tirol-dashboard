@@ -97,7 +97,7 @@ function getGroup( altersKlasse ) {
 function getGroupName( group ) {
   
   if (group === 0) {
-    return '0 - 10';
+    return '<= 10';
   }
 
   if (group === 1) {
@@ -133,7 +133,7 @@ function getGroupName( group ) {
   }
 
   if (group === 9) {
-    return '91 - ...';
+    return '>= 91';
   }
 }
 
@@ -158,20 +158,21 @@ for ( let dataSet of dataSets ) {
     let filtered = dataSet.data.filter( (current) => { return getGroup(current['Altersklassen']) === i; } );
     
     let total = filtered.reduce( (accumulator, current) => {
-      return accumulator + parseInt( current['Insgesamt'].replace('.','') );
+      return accumulator + parseInt( current['Insgesamt'].replace('.', ''), 10 );
     }, 0);
 
     let total_M = filtered.reduce( (accumulator, current) => {
-      let val = parseInt( current['Männer'].replace('.','') );
+      let val = parseInt( current['Männer'].replace('.', ''), 10 );
       return accumulator + (isNaN(val) === true ? 0 : val); //parse int ignores everything after the .
     }, 0);
 
     let total_F = filtered.reduce( (accumulator, current) => {
-      let val = parseInt( current['Frauen'].replace('.','') );
+      let val = parseInt( current['Frauen'].replace('.', ''), 10 );
       return accumulator + (isNaN(val) === true ? 0 : val); //parse int ignores everything after the .
     }, 0);
 
-    lines[i].push({ 
+    lines[i].push({
+      group: getGroupName(i),
       year: new Date(dataSet.year, 0, 1), 
       total: total,
       total_M: total_M,

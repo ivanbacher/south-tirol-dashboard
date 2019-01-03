@@ -31,6 +31,8 @@ export class Page4 {
 
   attached() {
 
+    console.log(lines)
+
     let svg1 = d3.select('#vis-01');
     let defs1 = svg1.append('defs');
 
@@ -61,14 +63,16 @@ export class Page4 {
 
     //create main vis
     let info1 = {
-      radius: 100,
-      padding: 5,
-      radiusStep: 40,
+      radius: 150,
+      startR: 150,
+      padding: 10,
+      radiusStep: 50,
       svg: svg1,
       defs: defs1,
       width: width1,
       height: height1,
-      id: 'vis-01'
+      id: 'vis-01',
+      pointR: 2
     };
 
     createCustomVis(info1);
@@ -80,10 +84,12 @@ function createCustomVis(info) {
   let defs = info.defs;
   let width = info.width;
   let height = info.height;
-  let radius = info.radius || 50;
+  let radius = info.radius || 40;
+  let startR = info.startR || 40;
   let padding = info.padding || 2;
   let radiusStep = info.radiusStep || 20;
   let index = 0;
+  let pointR = info.pointR || 1;
   let id = info.id;
 
   //
@@ -115,18 +121,20 @@ function createCustomVis(info) {
   
   let helperlines = container.append('g').attr('class', 'helperlines');
   let paths = container.append('g').attr('class', 'paths');
+  let arcs = container.append('g').attr('class', 'arcs');
   let points = container.append('g').attr('class', 'points');
-  let lables = container.append('g').attr('class', 'lables');
+  let lables1 = container.append('g').attr('class', 'lables');
+  let lables2 = container.append('g').attr('class', 'lables');
   
-
+  
 
   for ( let data of lines ) {
 
     let startA = degToRad(-90);
     let endA = degToRad(90);
 
-    let yMin =  d3.min( data, (d) => { return d.total_M; });
-    let yMax =  d3.max( data, (d) => { return d.total_M; });
+    let yMin =  d3.min( data, (d) => { return d.total; });
+    let yMax =  d3.max( data, (d) => { return d.total; });
 
     let gid = `${id}-gradient-${index}`;
 
@@ -141,11 +149,26 @@ function createCustomVis(info) {
     y.domain( [ yMin, yMax ] );
     y.range( [ (radius - radiusStep) + padding, radius - padding] );
 
-    line.outerRadius( (d) => { return y(d.total_M); });
+    line.outerRadius( (d) => { return y(d.total); });
 
+
+    //create arcs for debugging
+    let arc = d3.arc()
+      .outerRadius( radius )
+      .innerRadius( radius - radiusStep)
+      .startAngle( startA )
+      .endAngle( endA );
+
+    arcs.append('path')
+      .attr('d', arc)
+      .attr('fill', 'none')
+      .attr('stroke', 'lightgrey')
+      .attr('opacity', '0.3');
     
+    let radialLineContainer = paths.append('g')
+      .attr('id', `group-${data[0].group}`);
 
-    paths.append('path')
+    radialLineContainer.append('path')
       .data([data])
       .attr('class', 'radialArea')
       .attr('fill', `url(#${gid})`)
@@ -153,7 +176,10 @@ function createCustomVis(info) {
       .attr('d', line)
       .style('filter', `url(#${id}-glow)`);
 
-    points.selectAll('.points')
+    let pointContainer = points.append('g')
+      .attr('id', `group-${data[0].group}`);
+
+    pointContainer.selectAll('.points')
       .data(data)
       .enter().append('circle')
       .attr('cx', (d) => {
@@ -164,14 +190,15 @@ function createCustomVis(info) {
       })
       .attr('stroke', 'none')
       .attr('fill', 'black')
-      .attr('r', 1);
+      .attr('r', pointR)
+      .attr('opacity', '0.8');
 
     radius += radiusStep;
     index ++;
   }
 
   //need to have this here so radius is at max
-  container.attr( 'transform', `translate(${width / 2},${(height / 2) + radius/2 })` );
+  container.attr( 'transform', `translate(${width / 2},${(height / 2) + radius / 2 })` );
 
   /*
     Lables
@@ -183,16 +210,19 @@ function createCustomVis(info) {
 
   x.range( [ startA, endA ] );
 
-  lables.selectAll('.lables')
+  let lab1R = radius - (radiusStep / 2);
+
+  lables1.selectAll('.lables1')
     .data(data)
     .enter().append('text')
     .attr('x', (d) => {
-      return radius * Math.cos( line.angle()(d) - degToRad(90) );
+      return lab1R * Math.cos( line.angle()(d) - degToRad(90) );
     })
     .attr('y', (d) => {
-      return radius * Math.sin( line.angle()(d) - degToRad(90) );
+      return lab1R * Math.sin( line.angle()(d) - degToRad(90) );
     })
     .style('text-anchor', 'middle')
+    .style('font-size', '10px')
     .text( (d) => { return d.year.getFullYear(); } );
 
   /*
@@ -205,13 +235,61 @@ function createCustomVis(info) {
   helperlines.selectAll('.helperlines')
     .data(data)
     .enter().append('line')
-    .attr('x1', (d) => { return radius * Math.cos( line.angle()(d) - degToRad(90) ); } )
-    .attr('y1', (d) => { return radius * Math.sin( line.angle()(d) - degToRad(90) ); } )
-    .attr('x2', (d) => { return (100 - radiusStep) * Math.cos( line.angle()(d) - degToRad(90) ); } )
-    .attr('y2', (d) => { return (100 - radiusStep) * Math.sin( line.angle()(d) - degToRad(90) ); } )
+    .attr('x1', (d) => { return lab1R * Math.cos( line.angle()(d) - degToRad(90) ); } )
+    .attr('y1', (d) => { return lab1R * Math.sin( line.angle()(d) - degToRad(90) ); } )
+    .attr('x2', (d) => { return (startR - radiusStep) * Math.cos( line.angle()(d) - degToRad(90) ); } )
+    .attr('y2', (d) => { return (startR - radiusStep) * Math.sin( line.angle()(d) - degToRad(90) ); } )
     .attr('stroke', 'lightgrey')
     .attr('stroke-dasharray', '4')
     .attr('opacity', '0.5');
+
+  /*
+    Bottom lables
+  */
+  
+  let posX = - startR;
+  let posY = radiusStep / 2;
+  let labs = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    let  name = getGroupName(i);
+
+    labs.push({
+      text: name,
+      x: posX + (radiusStep / 2),
+      y: posY
+    });
+
+    posX -= radiusStep;
+  }
+
+  lables2.selectAll('.lables2')
+    .data(labs)
+    .enter().append('text')
+    .attr('x', (d) => {
+      return d.x;
+    })
+    .attr('y', (d) => {
+      return d.y;
+    })
+    .style('font-size', '10px')
+    .style('text-anchor', 'middle')
+    .text( (d) => { return d.text; } );
+  
+  lables2.selectAll('.lables2')
+    .data(labs)
+    .enter().append('text')
+    .attr('x', (d) => {
+      return -d.x;
+    })
+    .attr('y', (d) => {
+      return d.y;
+    })
+    .style('font-size', '10px')
+    .style('text-anchor', 'middle')
+    .text( (d) => { return d.text; } );
+
+
 }
 
 function degToRad( deg ) {
