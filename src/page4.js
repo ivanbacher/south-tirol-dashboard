@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 
 import { lines, getGroupName } from './resources/helpers/data3';
 import { createGradient } from './resources/helpers/glowGradient1';
-
+console.log(lines)
 /* 
   COLORS:
 
@@ -117,8 +117,10 @@ function createCustomVis(info) {
     .innerRadius( (d) => { return (radius - radiusStep) + padding; })
     .outerRadius( (d) => { return y(d.total); });
 
+
+  //need to change this if we add a year
   let x = d3.scaleTime()
-    .domain( [ new Date(1995, 0, 1), new Date(2017, 0, 1) ] );
+    .domain( [ new Date(1995, 0, 1), new Date(2018, 0, 1) ] );
 
   let y = d3.scaleLinear();
 

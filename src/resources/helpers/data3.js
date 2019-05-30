@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 
+import csv_2018 from '/data/wohnbevolkerung_nach_geschlecht_und_alter/2018.csv!text';
 import csv_2017 from '/data/wohnbevolkerung_nach_geschlecht_und_alter/2017.csv!text';
 import csv_2016 from '/data/wohnbevolkerung_nach_geschlecht_und_alter/2016.csv!text';
 import csv_2015 from '/data/wohnbevolkerung_nach_geschlecht_und_alter/2015.csv!text';
@@ -25,6 +26,7 @@ import csv_1996 from '/data/wohnbevolkerung_nach_geschlecht_und_alter/1996.csv!t
 import csv_1995 from '/data/wohnbevolkerung_nach_geschlecht_und_alter/1995.csv!text';
 
 let dataSets = [
+  { year: '2018', data: d3.csvParse( csv_2018 ) },
   { year: '2017', data: d3.csvParse( csv_2017 ) },
   { year: '2016', data: d3.csvParse( csv_2016 ) },
   { year: '2015', data: d3.csvParse( csv_2015 ) },
