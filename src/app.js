@@ -10,7 +10,8 @@ export class App {
       { route: 'page1', name: 'page1', moduleId: 'page1.html' },
       { route: 'page2', name: 'page2', moduleId: 'page2' },
       { route: 'page3', name: 'page3', moduleId: 'page3' },
-      { route: 'page4', name: 'page4', moduleId: 'page4' }
+      { route: 'page4', name: 'page4', moduleId: 'page4' },
+      { route: 'page5', name: 'page5', moduleId: 'page5' }
     ]);
   }
 }

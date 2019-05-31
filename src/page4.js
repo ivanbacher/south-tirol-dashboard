@@ -2,7 +2,7 @@ import * as d3 from 'd3';
 
 import { lines, getGroupName } from './resources/helpers/data3';
 import { createGradient } from './resources/helpers/glowGradient1';
-console.log(lines)
+
 /* 
   COLORS:
 
